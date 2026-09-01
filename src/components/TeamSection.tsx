@@ -35,7 +35,7 @@ interface Teammate {
 */
 const TEAM: Teammate[] = [
   {
-    name: "Aarav Sharma",
+    name: "",
     role: "AI Engineer",
     detail: "LLMs • PyTorch • Neural Nets",
     image: "/assets/images/team_ai_engineer.jpg",
@@ -44,7 +44,7 @@ const TEAM: Teammate[] = [
     dir: -1, spread: 0.64, rotate: -8,
   },
   {
-    name: "Rohan Verma",
+    name: "",
     role: "Backend Engineer",
     detail: "Node.js • APIs • Databases",
     image: "/assets/images/team_backend_engineer.jpg",
@@ -53,7 +53,7 @@ const TEAM: Teammate[] = [
     dir: 1, spread: 0.64, rotate: 8,
   },
   {
-    name: "Vikram Singh",
+    name: "",
     role: "Cybersecurity Specialist",
     detail: "Auth • Pentesting • Security",
     image: "/assets/images/team_cybersecurity.jpg",
@@ -62,7 +62,7 @@ const TEAM: Teammate[] = [
     dir: -1, spread: 1.02, rotate: -15,
   },
   {
-    name: "Ananya Gupta",
+    name: "",
     role: "Junior Frontend & UI",
     detail: "React • Tailwind • UI/UX",
     image: "/assets/images/team_frontend_ui.jpg",
@@ -103,7 +103,7 @@ const BAND_HALF = (
   <>
     {Array.from({ length: BAND_REPEATS }, (_, i) => (
       <span key={i} className="pr-[3vw]">
-        OUR TEAM &bull;
+        DIGIWEBNOW &bull;
       </span>
     ))}
   </>
@@ -438,8 +438,8 @@ export const TeamSection: React.FC = () => {
 
               <div className="absolute bottom-4 left-4 right-4 bg-black/85 p-3 rounded-2xl border border-white/10 flex items-center justify-between">
                 <div>
-                  <div className="text-white font-bold text-sm">DigiWebNow &bull; Devyanshu</div>
-                  <div className="text-xs text-[#00f2fe]">Founder &bull; Lead Full-Stack Architect</div>
+                  <div className="text-white font-bold text-sm">DigiWebNow &bull;</div>
+                  <div className="text-xs text-[#00f2fe]"> Lead Full-Stack Architect</div>
                 </div>
                 <Globe className="w-5 h-5 text-[#00f2fe]" />
               </div>
