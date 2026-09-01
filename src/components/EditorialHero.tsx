@@ -30,11 +30,10 @@ const DRAWER_LINKS = [
 ];
 
 const FOOTER_LEFT = [
-  'Custom Web & E-Commerce Development',
-  'Full-Stack Web Apps & Cloud Architecture',
+  'Custom Web & E-Commerce Engineering',
+  'Full-Stack Web Apps • Cloud Architecture',
   'Modern UI/UX Design & High-Converting Websites',
-  'API Integrations & Database Engineering',
-  'Speed, SEO & Core Web Vitals Optimization',
+  'API Integrations & Performance Optimization',
 ];
 const FOOTER_RIGHT = ['Featured live work', 'iYOU Global & Gaur Furniture'];
 
@@ -120,7 +119,10 @@ export const EditorialHero: React.FC = () => {
         className="anim-fade-up absolute inset-x-0 top-[18vh] z-10 overflow-hidden sm:top-[16vh]"
         aria-hidden="true"
       >
-        <div className="marquee flex w-max whitespace-nowrap font-hn text-[12vh] leading-none text-cream sm:text-[18vh] font-semibold tracking-tight">
+        <div
+          className="marquee flex w-max whitespace-nowrap font-hn text-[12vh] leading-none text-cream sm:text-[18vh] font-semibold tracking-tight"
+          style={{ animationDuration: '90s' }}
+        >
           {marqueeSpan}
           {marqueeSpan}
         </div>
@@ -128,7 +130,7 @@ export const EditorialHero: React.FC = () => {
 
       {/* ---------- Horizontal cream rule (z-10) ---------- */}
       <div
-        className="anim-line absolute inset-x-6 bottom-[calc(5.5rem_+_var(--section-curve))] z-10 h-0.5 bg-cream sm:inset-x-10 sm:bottom-[calc(7rem_+_var(--section-curve))]"
+        className="anim-line absolute inset-x-6 bottom-[calc(6.8rem_+_var(--section-curve))] z-10 h-0.5 bg-cream/80 sm:inset-x-10 sm:bottom-[calc(8rem_+_var(--section-curve))]"
         style={{ animationDelay: '1200ms' }}
       />
 
@@ -207,16 +209,16 @@ export const EditorialHero: React.FC = () => {
       </header>
 
       {/* ---------- Footer: desktop z-10 (under portrait), mobile z-30 ---------- */}
-      <footer className="absolute inset-x-0 bottom-[var(--section-curve)] z-30 flex items-end justify-between px-6 pb-5 font-hn text-xs leading-relaxed sm:z-10 sm:px-10 sm:pb-8 sm:text-sm">
-        <div className="anim-fade-up" style={{ animationDelay: '1400ms' }}>
+      <footer className="absolute inset-x-0 bottom-[var(--section-curve)] z-30 flex items-end justify-between px-6 pb-4 font-hn text-[11px] sm:text-xs leading-snug sm:z-10 sm:px-10 sm:pb-6">
+        <div className="anim-fade-up space-y-0.5 max-w-sm" style={{ animationDelay: '1400ms' }}>
           {FOOTER_LEFT.map((line) => (
-            <p key={line}>{line}</p>
+            <p key={line} className="tracking-wide text-cream/90">{line}</p>
           ))}
         </div>
 
-        <div className="anim-fade-up text-right" style={{ animationDelay: '1550ms' }}>
+        <div className="anim-fade-up text-right space-y-0.5" style={{ animationDelay: '1550ms' }}>
           {FOOTER_RIGHT.map((line) => (
-            <p key={line}>{line}</p>
+            <p key={line} className="tracking-wide text-cream/80">{line}</p>
           ))}
         </div>
       </footer>
