@@ -48,7 +48,12 @@ export const App: React.FC = () => {
   }, [route]);
 
   if (route === 'contact') {
-    return <ContactPage onBack={closePage} />;
+    return (
+      <div className="bg-[#0C0C0C] text-[#D7E2EA] font-kanit min-h-screen">
+        <FloatingNavbar onContactClick={openContact} />
+        <ContactPage onBack={closePage} />
+      </div>
+    );
   }
 
   if (route === 'admin' || route === 'owner') {
