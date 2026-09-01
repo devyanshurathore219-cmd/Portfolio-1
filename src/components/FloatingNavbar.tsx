@@ -185,7 +185,7 @@ export const FloatingNavbar: React.FC<FloatingNavbarProps> = ({
       aria-label="Main floating menu"
       className={`fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center pointer-events-auto ${className}`}
     >
-      <div className="flex items-center bg-black/95 backdrop-blur-2xl border border-white/[0.12] p-1.5 sm:p-2 rounded-full shadow-[0_16px_40px_rgba(0,0,0,0.8),0_0_1px_1px_rgba(255,255,255,0.05)] transition-all">
+      <div className="flex items-center bg-white/95 backdrop-blur-2xl border border-white/60 p-1.5 sm:p-2 rounded-full shadow-[0_16px_45px_rgba(0,0,0,0.4),0_2px_8px_rgba(255,255,255,0.2)] transition-all">
         {NAV_TABS.map((tab) => {
           const isActive = activeTab === tab.id;
           const Icon = tab.icon;
@@ -196,8 +196,8 @@ export const FloatingNavbar: React.FC<FloatingNavbarProps> = ({
               onClick={(e) => handleTabClick(tab, e)}
               className={`relative flex items-center justify-center rounded-full transition-all duration-300 focus:outline-none select-none ${
                 isActive
-                  ? 'bg-[#222224] text-white px-4 sm:px-5 py-2 sm:py-2.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]'
-                  : 'text-white/70 hover:text-white hover:bg-white/[0.08] p-2.5 sm:p-3'
+                  ? 'bg-black text-white px-4 sm:px-5 py-2 sm:py-2.5 shadow-[0_4px_12px_rgba(0,0,0,0.3)]'
+                  : 'text-neutral-600 hover:text-black hover:bg-neutral-100/80 p-2.5 sm:p-3'
               }`}
               title={tab.label}
               aria-label={tab.label}
@@ -207,7 +207,7 @@ export const FloatingNavbar: React.FC<FloatingNavbarProps> = ({
                 <Icon
                   active={isActive}
                   className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 ${
-                    isActive ? 'text-white scale-105' : 'text-white/80'
+                    isActive ? 'text-white scale-105' : 'text-neutral-700'
                   }`}
                 />
                 <AnimatePresence initial={false}>
