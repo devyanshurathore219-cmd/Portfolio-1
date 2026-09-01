@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>DigiWebNow - Custom Web Engineering & Portfolio</title>
+  <meta name="description" content="Official agency portfolio of DigiWebNow. Featuring featured client production websites iYOU Global and Gaur Furniture. Specializing in bespoke custom web architecture, e-commerce engines, and high-performance frontends.">
+  <meta name="keywords" content="DigiWebNow, Custom Web Development, iYOU Global, Gaur Furniture, E-Commerce, Web Engineering, Portfolio">
+  <meta name="author" content="DigiWebNow">
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:title" content="DigiWebNow | Custom Web Engineering Studio">
+  <meta property="og:description" content="Featured client websites: iYOU Global & Gaur Furniture. Built by DigiWebNow.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/iyouglobal.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Background Animated Particle Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Sticky Header Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#home" class="logo" id="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-code-merge"></i>
+        </div>
+        <div>Digi<span class="highlight">Web</span>Now</div>
+      </a>
+
+      <nav class="nav-menu" id="primary-nav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#portfolio" class="nav-link">Client Websites</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About DigiWebNow</a>
+        <a href="#estimator" class="nav-link">Cost Estimator</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme Mode">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <a href="#contact" class="btn btn-primary" id="header-cta-btn">
+          <span>Start Your Website</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <button class="mobile-toggle-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    
+    <!-- High-Impact Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        
+        <!-- Left Column: High-Impact Typography & CTAs -->
+        <div class="hero-content reveal-fade-up">
+          <div class="hero-badge">
+            <i class="fa-solid fa-bolt"></i> 100% BESPOKE WEB ENGINEERING
+          </div>
+
+          <h1 class="hero-title">
+            WE CRAFT <span class="gradient-text">CUSTOM WEBSITES</span> TAILORED FOR DOMINANCE
+          </h1>
+
+          <p class="hero-subtext">
+            Official portfolio of <strong>DigiWebNow</strong> led by <strong>DigiWebNow</strong>. We engineer high-speed, custom-tailored websites and e-commerce platforms like <strong>iYOU Global</strong> and <strong>Gaur Furniture</strong>.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary" id="hero-portfolio-btn">
+              <i class="fa-solid fa-cubes"></i> View iYOU Global & Gaur Furniture
+            </a>
+            <a href="#estimator" class="btn btn-secondary" id="hero-estimator-btn">
+              <i class="fa-solid fa-calculator"></i> Calculate Web Scope
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <div class="stat-num">25+</div>
+              <div class="stat-txt">Websites Built</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="stat-num">99.8%</div>
+              <div class="stat-txt">Client Satisfaction</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="stat-num">&lt;1.0s</div>
+              <div class="stat-txt">Average Load Time</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Founder Cutout Portrait & Floating Badges Showcase -->
+        <div class="hero-visual-showcase reveal-scale">
+          <div class="portrait-card-container">
+            
+            <!-- Glowing Starburst Graphic Background -->
+            <div class="starburst-bg"></div>
+            <i class="fa-solid fa-sun starburst-icon"></i>
+
+            <div class="portrait-image-box">
+              <img src="assets/images/devyanshu_hero.jpg" alt="DigiWebNow - Lead Web Architect">
+              
+              <!-- Floating Founder Info Bar -->
+              <div class="floating-founder-tag">
+                <div class="founder-info-text">
+                  <h4>DigiWebNow</h4>
+                  <p>Founder & Lead Web Architect</p>
+                </div>
+                <i class="fa-solid fa-award text-orange" style="font-size:1.5rem;"></i>
+              </div>
+            </div>
+
+            <!-- Floating Featured Works Pill Badge -->
+            <div class="floating-project-pill">
+              <i class="fa-solid fa-globe"></i>
+              <div>
+                <h5>Featured Live Works</h5>
+                <p>iYOU Global & Gaur Furniture</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Infinite Marquee Ticker -->
+      <div class="marquee-wrapper">
+        <div class="marquee-content">
+          <div class="marquee-item"><i class="fa-solid fa-code"></i> BESPOKE WEB DEVELOPMENT</div>
+          <div class="marquee-item"><i class="fa-solid fa-layer-group"></i> TAILORED E-COMMERCE</div>
+          <div class="marquee-item"><i class="fa-solid fa-gauge-high"></i> CORE WEB VITALS OPTIMIZED</div>
+          <div class="marquee-item"><i class="fa-solid fa-mobile-screen"></i> 100% RESPONSIVE FRONTENDS</div>
+          <div class="marquee-item"><i class="fa-solid fa-code"></i> BESPOKE WEB DEVELOPMENT</div>
+          <div class="marquee-item"><i class="fa-solid fa-layer-group"></i> TAILORED E-COMMERCE</div>
+          <div class="marquee-item"><i class="fa-solid fa-gauge-high"></i> CORE WEB VITALS OPTIMIZED</div>
+          <div class="marquee-item"><i class="fa-solid fa-mobile-screen"></i> 100% RESPONSIVE FRONTENDS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Portfolio Showcase Section (iYOU Global & Gaur Furniture) -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <div class="center-text reveal-fade-up">
+          <div class="section-tag"><i class="fa-solid fa-display"></i> Production Showcase</div>
+          <h2 class="section-title">Featured Client <span class="gradient-text">Websites</span></h2>
+          <p class="section-desc">Explore live production websites designed, built, and launched by DigiWebNow.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          
+          <!-- Featured Project 1: iYOU Global -->
+          <div class="glass-card portfolio-card reveal-scale" id="project-card-iyou">
+            <div class="portfolio-thumb">
+              <img src="assets/images/iyouglobal.jpg" alt="iYOU Global Production Website Mockup">
+              <div class="portfolio-overlay">
+                <button class="btn btn-primary open-project-modal" data-project="iyou" id="btn-modal-iyou">
+                  <i class="fa-solid fa-circle-info"></i> Project Case Study
+                </button>
+                <a href="https://iyouglobal.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live Site
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-details">
+              <div class="portfolio-tags">
+                <span class="tag">1) Corporate Web Platform</span>
+                <span class="tag">Global Architecture</span>
+                <span class="tag">Custom UI/UX</span>
+              </div>
+              <h3 class="portfolio-title">iYOU Global</h3>
+              <p class="portfolio-desc">An international corporate web platform built for high brand authority, intuitive navigation, and clean responsive layout scaling across global devices.</p>
+              <div class="portfolio-footer">
+                <button class="open-project-modal live-link" data-project="iyou" style="background:none;">
+                  Case Study <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="https://iyouglobal.com/" target="_blank" rel="noopener noreferrer" class="live-link">
+                  https://iyouglobal.com/ <i class="fa-solid fa-external-link"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Project 2: Gaur Furniture -->
+          <div class="glass-card portfolio-card reveal-scale" id="project-card-gaur">
+            <div class="portfolio-thumb">
+              <img src="assets/images/gaur_furniture.jpg" alt="Gaur Furniture Production Website Mockup">
+              <div class="portfolio-overlay">
+                <button class="btn btn-primary open-project-modal" data-project="gaur" id="btn-modal-gaur">
+                  <i class="fa-solid fa-circle-info"></i> Project Case Study
+                </button>
+                <a href="https://www.gaurfurniture.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live Store
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-details">
+              <div class="portfolio-tags">
+                <span class="tag">2) Custom E-Commerce</span>
+                <span class="tag">Luxury Catalog</span>
+                <span class="tag">Responsive Storefront</span>
+              </div>
+              <h3 class="portfolio-title">Gaur Furniture</h3>
+              <p class="portfolio-desc">A luxury e-commerce and furniture store showcase engineered with rich product catalogs, warm visual aesthetics, and streamlined mobile checkout routes.</p>
+              <div class="portfolio-footer">
+                <button class="open-project-modal live-link" data-project="gaur" style="background:none;">
+                  Case Study <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="https://www.gaurfurniture.com/" target="_blank" rel="noopener noreferrer" class="live-link">
+                  https://www.gaurfurniture.com/ <i class="fa-solid fa-external-link"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Web Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="center-text reveal-fade-up">
+          <div class="section-tag"><i class="fa-solid fa-laptop-code"></i> Dedicated Web Studio</div>
+          <h2 class="section-title">Our Custom <span class="gradient-text">Web Solutions</span></h2>
+          <p class="section-desc">We focus exclusively on custom web development. Every line of code, layout grid, and interactive behavior is engineered for your unique business goals.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- 01. Custom Corporate Platforms -->
+          <div class="glass-card web-service-card reveal-fade-up" id="service-bespoke">
+            <div class="web-service-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="web-service-title">01. Bespoke Corporate Web Platforms</h3>
+            <p class="web-service-desc">Clean, high-performance websites built from scratch to establish instant market authority for global enterprises and ambitious startups.</p>
+            <ul class="web-feature-list">
+              <li><i class="fa-solid fa-circle-check"></i> Custom Modern Frontends (HTML5/JS)</li>
+              <li><i class="fa-solid fa-circle-check"></i> Clean Semantic Code & Scalable Architecture</li>
+              <li><i class="fa-solid fa-circle-check"></i> Pixel-Perfect Desktop & Mobile Layouts</li>
+            </ul>
+          </div>
+
+          <!-- 02. Tailored E-Commerce Stores -->
+          <div class="glass-card web-service-card reveal-fade-up" id="service-ecommerce">
+            <div class="web-service-icon">
+              <i class="fa-solid fa-store"></i>
+            </div>
+            <h3 class="web-service-title">02. Tailored E-Commerce & Storefronts</h3>
+            <p class="web-service-desc">Custom shopping experiences built to convert visitors into loyal customers with fast catalogs, fluid carts, and seamless checkout flows.</p>
+            <ul class="web-feature-list">
+              <li><i class="fa-solid fa-circle-check"></i> Shopify & Custom Store Development</li>
+              <li><i class="fa-solid fa-circle-check"></i> Interactive Product Showcase Grids</li>
+              <li><i class="fa-solid fa-circle-check"></i> Optimized Frictionless Checkout UI</li>
+            </ul>
+          </div>
+
+          <!-- 03. Interactive UI & Web Animations -->
+          <div class="glass-card web-service-card reveal-fade-up" id="service-ui-ux">
+            <div class="web-service-icon">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3 class="web-service-title">03. Interactive UI & Micro-Animations</h3>
+            <p class="web-service-desc">Engage your audience with micro-interactions, smooth scroll triggers, and dynamic visual state updates that elevate user delight.</p>
+            <ul class="web-feature-list">
+              <li><i class="fa-solid fa-circle-check"></i> Smooth Scroll & Reveal Triggers</li>
+              <li><i class="fa-solid fa-circle-check"></i> Custom Modal Drawers & Lightboxes</li>
+              <li><i class="fa-solid fa-circle-check"></i> Glowing Hover & Magnetic Micro-Effects</li>
+            </ul>
+          </div>
+
+          <!-- 04. Speed & Core Web Vitals Optimization -->
+          <div class="glass-card web-service-card reveal-fade-up" id="service-performance">
+            <div class="web-service-icon">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3 class="web-service-title">04. Speed & Core Web Vitals Optimization</h3>
+            <p class="web-service-desc">We optimize your website's asset pipeline, asset sizes, and DOM rendering to guarantee lighting-fast load times across all networks.</p>
+            <ul class="web-feature-list">
+              <li><i class="fa-solid fa-circle-check"></i> Sub-Second Load Time Tuning</li>
+              <li><i class="fa-solid fa-circle-check"></i> Technical On-Page SEO Foundations</li>
+              <li><i class="fa-solid fa-circle-check"></i> Cross-Browser & Cross-Device QA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Founder Spotlight (DigiWebNow) -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="center-text reveal-fade-up">
+          <div class="section-tag"><i class="fa-solid fa-user-tie"></i> Founder & Tech Lead</div>
+          <h2 class="section-title">Meet <span class="gradient-text">DigiWebNow</span></h2>
+          <p class="section-desc">Combining computer application expertise with creative web vision to architect custom digital experiences.</p>
+        </div>
+
+        <div class="objectives-grid-layout">
+          
+          <!-- Left Column: The 4 Core Objectives Cards -->
+          <div class="company-values-grid reveal-fade-up">
+            <div class="glass-card value-card">
+              <div class="value-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <h4>BCA Qualification</h4>
+              <p>Graduated with a Bachelor of Computer Applications from MERI Institute, specialized in modern systems and software.</p>
+            </div>
+
+            <div class="glass-card value-card">
+              <div class="value-icon"><i class="fa-solid fa-microchip"></i></div>
+              <h4>Technical Skills</h4>
+              <p>Diploma in Computer Application (DCA), Adobe Photoshop, OS architecture, and modern full-stack web engineering.</p>
+            </div>
+
+            <div class="glass-card value-card">
+              <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h4>Persistent Focus</h4>
+              <p>Persistence, optimistic problem-solving, and clear communication to deliver project success without compromise.</p>
+            </div>
+
+            <div class="glass-card value-card">
+              <div class="value-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <h4>Measurable Results</h4>
+              <p>Sub-second page speeds and conversion-optimized UX designed to turn visitors into paying clients.</p>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Live Showcase Container -->
+          <div class="objectives-showcase-container reveal-scale">
+            <div class="showcase-header">
+              <h3>Featured Client Websites</h3>
+              <div class="showcase-tabs-toggle">
+                <button class="showcase-tab-btn active" data-tab="showcase-slide-iyou">iYOU Global</button>
+                <button class="showcase-tab-btn" data-tab="showcase-slide-gaur">Gaur Furniture</button>
+              </div>
+            </div>
+
+            <div class="showcase-preview-frame">
+              <div class="showcase-slide active" id="showcase-slide-iyou">
+                <img src="assets/images/iyouglobal.jpg" alt="iYOU Global Production Site">
+              </div>
+              <div class="showcase-slide" id="showcase-slide-gaur">
+                <img src="assets/images/gaur_furniture.jpg" alt="Gaur Furniture Production Store">
+              </div>
+            </div>
+
+            <div class="showcase-meta-box">
+              <div class="meta-info">
+                <h5 id="showcase-title-display">iYOU Global Corporate Platform</h5>
+                <p>Designed & Engineered by DigiWebNow</p>
+              </div>
+              <a href="https://iyouglobal.com/" target="_blank" rel="noopener noreferrer" id="showcase-url-display" class="live-link">
+                https://iyouglobal.com/ <i class="fa-solid fa-external-link"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Web Scope & Cost Estimator Section -->
+    <section id="estimator" class="estimator-section">
+      <div class="container">
+        <div class="center-text reveal-fade-up">
+          <div class="section-tag"><i class="fa-solid fa-sliders"></i> Interactive Estimator</div>
+          <h2 class="section-title">Calculate Your Custom <span class="gradient-text">Website Scope</span></h2>
+          <p class="section-desc">Select the custom web features required for your project to compute a real-time budget range.</p>
+        </div>
+
+        <div class="estimator-box reveal-scale">
+          <div class="estimator-grid">
+            <div class="estimator-options">
+              
+              <div class="options-group">
+                <h4><i class="fa-solid fa-code" style="color:var(--accent-orange);"></i> Custom Web Features & Modules:</h4>
+                <div class="service-checkbox-grid">
+                  <label class="option-card-label selected">
+                    <input type="checkbox" class="estimator-web-input" data-cost="600" data-name="Bespoke Business Site (5-7 Pages)" checked>
+                    <span>Custom Business Website ($600)</span>
+                  </label>
+                  <label class="option-card-label">
+                    <input type="checkbox" class="estimator-web-input" data-cost="850" data-name="Full E-Commerce Storefront Engine">
+                    <span>E-Commerce Engine ($850)</span>
+                  </label>
+                  <label class="option-card-label">
+                    <input type="checkbox" class="estimator-web-input" data-cost="350" data-name="Interactive UI Animations & Micro-Effects">
+                    <span>Custom UI Animations ($350)</span>
+                  </label>
+                  <label class="option-card-label">
+                    <input type="checkbox" class="estimator-web-input" data-cost="300" data-name="Custom Content Management System (CMS)">
+                    <span>CMS Integration ($300)</span>
+                  </label>
+                  <label class="option-card-label">
+                    <input type="checkbox" class="estimator-web-input" data-cost="250" data-name="Core Web Vitals & Speed Optimization">
+                    <span>Performance Tuning ($250)</span>
+                  </label>
+                  <label class="option-card-label">
+                    <input type="checkbox" class="estimator-web-input" data-cost="200" data-name="Technical On-Page SEO Architecture">
+                    <span>SEO Setup ($200)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="options-group">
+                <h4><i class="fa-solid fa-clock" style="color:var(--accent-orange);"></i> Turnaround Schedule:</h4>
+                <div class="service-checkbox-grid">
+                  <label class="option-card-label selected">
+                    <input type="radio" name="turnaround" data-multiplier="1.0" checked>
+                    <span>Standard Schedule (2-3 Weeks)</span>
+                  </label>
+                  <label class="option-card-label">
+                    <input type="radio" name="turnaround" data-multiplier="1.25">
+                    <span>Fast-Track Launch (7-10 Days)</span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="estimation-summary-card">
+              <div>
+                <h4 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:700; margin-bottom:1rem;">Project Summary</h4>
+                <div class="total-price-box">
+                  <h3>Estimated Investment</h3>
+                  <div class="price-display" id="estimated-price">$600</div>
+                </div>
+                
+                <h5 style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.75rem;">Selected Features:</h5>
+                <ul class="selected-list" id="selected-services-list">
+                  <!-- Populated by main.js -->
+                </ul>
+              </div>
+
+              <button class="btn btn-primary" id="estimator-inquiry-btn" style="width:100%;">
+                <i class="fa-solid fa-paper-plane"></i> Book Project Brief
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="center-text reveal-fade-up">
+          <div class="section-tag"><i class="fa-solid fa-paper-plane"></i> Initiate Project</div>
+          <h2 class="section-title">Let's Build Your <span class="gradient-text">Custom Website</span></h2>
+          <p class="section-desc">Ready for a custom web experience tailored to your exact requirements? Send us your brief below.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Direct Details -->
+          <div class="glass-card contact-info-box reveal-scale">
+            <div>
+              <h3 style="font-family:var(--font-heading); font-size:1.5rem; font-weight:700; margin-bottom:0.5rem;">Contact DigiWebNow</h3>
+              <p style="color:var(--text-muted); font-size:0.95rem;">DigiWebNow Team are available for new custom web projects.</p>
+
+              <div class="contact-method-list">
+                <div class="contact-method-item">
+                  <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="contact-details">
+                    <h5>Official Email</h5>
+                    <a href="mailto:infodigiwebnow@gmail.com">infodigiwebnow@gmail.com</a>
+                  </div>
+                </div>
+
+                <div class="contact-method-item">
+                  <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                  <div class="contact-details">
+                    <h5>Phone / WhatsApp</h5>
+                    <a href="tel:817-869-9658">817-869-9658</a> / <a href="tel:9870324454">9870324454</a>
+                  </div>
+                </div>
+
+                <div class="contact-method-item">
+                  <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
+                  <div class="contact-details">
+                    <h5>Instagram</h5>
+                    <a href="https://instagram.com/officialdigiwebnow" target="_blank" rel="noopener noreferrer">@officialdigiwebnow</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h5 style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; margin-bottom:1rem;">Connect With Us:</h5>
+              <div class="social-links-row">
+                <a href="https://instagram.com/officialdigiwebnow" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="mailto:infodigiwebnow@gmail.com" class="social-icon-btn" aria-label="Email Us">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="tel:817-869-9658" class="social-icon-btn" aria-label="Call Phone">
+                  <i class="fa-solid fa-phone"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="glass-card contact-form-card reveal-scale">
+            <div id="form-alert-area"></div>
+            <form id="digi-contact-form">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Your Full Name *</label>
+                  <input type="text" id="contact-name" class="form-input" placeholder="e.g. Alex Johnson" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Email Address *</label>
+                  <input type="email" id="contact-email" class="form-input" placeholder="alex@company.com" required>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="contact-phone">Phone Number *</label>
+                  <input type="tel" id="contact-phone" class="form-input" placeholder="+1 (555) 000-0000" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-web-type">Custom Project Scope *</label>
+                  <select id="contact-web-type" class="form-select" required>
+                    <option value="Bespoke Corporate Website">Bespoke Corporate Website</option>
+                    <option value="Custom E-Commerce Platform">Custom E-Commerce Platform</option>
+                    <option value="Interactive Web Application">Interactive Web Application</option>
+                    <option value="Performance & Core Web Vitals Refactor">Performance & Core Web Vitals Refactor</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Project Brief & Specific Requirements *</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="Tell us about your brand goals, required website features, or reference websites..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="submit-contact-btn" style="width:100%;">
+                <i class="fa-solid fa-paper-plane"></i> Submit Website Inquiry
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-code-merge"></i></div>
+            <div>Digi<span class="highlight">Web</span>Now</div>
+          </a>
+          <p>Bespoke Web Engineering Studio. Custom websites and e-commerce platforms tailored to your business goals.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Featured Client Work</a></li>
+            <li><a href="#services">Custom Services</a></li>
+            <li><a href="#about">About DigiWebNow</a></li>
+            <li><a href="#estimator">Web Estimator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Featured Client Sites</h5>
+          <ul>
+            <li><a href="https://iyouglobal.com/" target="_blank" rel="noopener noreferrer">1) iYOU Global Platform</a></li>
+            <li><a href="https://www.gaurfurniture.com/" target="_blank" rel="noopener noreferrer">2) Gaur Furniture Store</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Direct Contact</h5>
+          <ul>
+            <li><a href="mailto:infodigiwebnow@gmail.com"><i class="fa-solid fa-envelope" style="margin-right:0.4rem; color:var(--accent-orange);"></i> infodigiwebnow@gmail.com</a></li>
+            <li><a href="tel:817-869-9658"><i class="fa-solid fa-phone" style="margin-right:0.4rem; color:var(--accent-orange);"></i> 817-869-9658</a></li>
+            <li><a href="tel:9870324454"><i class="fa-solid fa-phone" style="margin-right:0.4rem; color:var(--accent-orange);"></i> 9870324454</a></li>
+            <li><a href="https://instagram.com/officialdigiwebnow" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" style="margin-right:0.4rem; color:var(--accent-orange);"></i> officialdigiwebnow</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 DigiWebNow. Custom Engineered by <strong>DigiWebNow</strong>.</div>
+        <div>Tailored Custom Web Solutions</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Overlay Window -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close Modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body" id="modal-content-area">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Controller -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
