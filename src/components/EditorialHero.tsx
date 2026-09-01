@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, Instagram } from 'lucide-react';
+import { X } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 /* ------------------------------------------------------------------ *
@@ -15,18 +15,18 @@ const LAST_NAME = '';
 const BRAND = 'DigiWebNow';
 const YEAR = '2026';
 
-/* Centered Segmented Bar items matching the spec & uploaded design */
-const NAV_SEGMENTS = [
-  { id: 'about', label: 'Story', href: '#about' },
-  { id: 'services', label: 'Jobs', href: '#services' },
-  { id: 'contact', label: 'Message', href: '#contact' },
-  { id: 'projects', label: 'Global', href: '#projects' },
-];
-
 const SOCIAL_LINKS = [
   { label: 'Instagram', href: 'https://instagram.com/officialdigiwebnow' },
   { label: 'iYOU Global', href: 'https://iyouglobal.com/' },
   { label: 'Gaur Furniture', href: 'https://www.gaurfurniture.com/' },
+];
+
+const DRAWER_LINKS = [
+  { label: 'Home', href: '#top' },
+  { label: 'Services', href: '#services' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Team', href: '#team' },
+  { label: 'Contact', href: '#/contact' },
 ];
 
 const FOOTER_LEFT = ['Custom Web Engineer', 'Founder of DigiWebNow', 'BCA — MERI Institute'];
@@ -36,7 +36,6 @@ const EASE_DRAWER = 'cubic-bezier(0.76, 0, 0.24, 1)';
 
 export const EditorialHero: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('about');
 
   /* 3D Mouse Parallax & Tilt physics */
   const mouseX = useMotionValue(0);
@@ -68,31 +67,6 @@ export const EditorialHero: React.FC = () => {
     mouseX.set(0);
     mouseY.set(0);
   };
-
-  /* Track scroll position to update active segment pill */
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + 250;
-      const sections = NAV_SEGMENTS.map((s) => {
-        const el = document.getElementById(s.id);
-        return {
-          id: s.id,
-          top: el ? el.offsetTop : 0,
-          bottom: el ? el.offsetTop + el.offsetHeight : 0,
-        };
-      });
-
-      for (const section of sections) {
-        if (scrollPos >= section.top && scrollPos <= section.bottom) {
-          setActiveTab(section.id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   /* Lock the page while the drawer is open. */
   useEffect(() => {
@@ -183,50 +157,7 @@ export const EditorialHero: React.FC = () => {
           {BRAND}
         </a>
 
-        {/* Center: Centered Segmented Bar (Desktop & Tablet) */}
-        <nav
-          aria-label="Main Navigation"
-          className="anim-fade-up hidden sm:flex items-center absolute left-[38.5%] -translate-x-1/2 z-20"
-          style={{ animationDelay: '900ms' }}
-        >
-          <div className="flex items-center rounded-full bg-white/[0.08] hover:bg-white/[0.12] text-cream backdrop-blur-md border border-white/20 shadow-[0_4px_24px_rgba(0,0,0,0.25)] px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium tracking-wide transition-all">
-            {NAV_SEGMENTS.map((segment) => {
-              const isActive = activeTab === segment.id;
-              return (
-                <React.Fragment key={segment.id}>
-                  <a
-                    href={segment.href}
-                    onClick={() => setActiveTab(segment.id)}
-                    className={`relative rounded-full px-3 sm:px-3.5 py-1 text-xs sm:text-sm font-semibold transition-all duration-300 ${
-                      isActive
-                        ? 'bg-white/25 text-white border border-white/30 shadow-[0_0_12px_rgba(255,255,255,0.2)]'
-                        : 'text-cream/70 hover:text-white hover:bg-white/10'
-                    }`}
-                  >
-                    {segment.label}
-                  </a>
-
-                  {/* Vertical divider */}
-                  <span className="text-white/20 font-light select-none mx-0.5 sm:mx-1 text-xs">
-                    |
-                  </span>
-                </React.Fragment>
-              );
-            })}
-
-            {/* Social Icons Segment */}
-            <a
-              href={SOCIAL_LINKS[0].href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 rounded-full px-2.5 sm:px-3 py-1 text-xs font-semibold text-cream/70 hover:text-white hover:bg-white/10 transition-all"
-              title="Official Instagram"
-            >
-              <Instagram className="h-3.5 w-3.5 text-cream" />
-              <span className="hidden md:inline text-[11px] tracking-normal">social icons</span>
-            </a>
-          </div>
-        </nav>
+        {/* Center space kept clear for the Floating Capsule Navbar */}
 
         {/* Right: Year & Mobile Hamburger Button */}
         <div className="flex items-center gap-4 z-10 min-w-[100px] justify-end">
@@ -335,7 +266,7 @@ export const EditorialHero: React.FC = () => {
         </p>
 
         <nav className="mt-6 flex flex-col gap-1">
-          {NAV_SEGMENTS.map((link, i) => (
+          {DRAWER_LINKS.map((link, i) => (
             <a
               key={link.label}
               href={link.href}
