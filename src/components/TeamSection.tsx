@@ -4,7 +4,7 @@ import { FadeIn } from './FadeIn';
 import { Magnet } from './Magnet';
 import { Globe, ArrowUpRight } from 'lucide-react';
 
-const DEVYANSHU_PORTRAIT = "/assets/images/devyanshu_hero.jpg";
+const DEVYANSHU_PORTRAIT = "/assets/images/devyanshu_founder_hd.jpg";
 
 interface Teammate {
   name: string;
@@ -438,8 +438,8 @@ export const TeamSection: React.FC = () => {
 
               <div className="absolute bottom-4 left-4 right-4 bg-black/85 p-3 rounded-2xl border border-white/10 flex items-center justify-between">
                 <div>
-                  <div className="text-white font-bold text-sm">DigiWebNow</div>
-                  <div className="text-xs text-[#00f2fe]">BCA &bull; Full-Stack Web Architect</div>
+                  <div className="text-white font-bold text-sm">DigiWebNow &bull; Devyanshu</div>
+                  <div className="text-xs text-[#00f2fe]">Founder &bull; Lead Full-Stack Architect</div>
                 </div>
                 <Globe className="w-5 h-5 text-[#00f2fe]" />
               </div>
