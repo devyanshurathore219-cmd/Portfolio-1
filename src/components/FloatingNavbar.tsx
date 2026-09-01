@@ -8,7 +8,7 @@ export interface NavTab {
   icon: (props: { active: boolean; className?: string }) => React.JSX.Element;
 }
 
-const NAV_TABS: NavTab[] = [
+export const NAV_TABS: NavTab[] = [
   {
     id: 'top',
     label: 'Home',
@@ -29,8 +29,26 @@ const NAV_TABS: NavTab[] = [
     ),
   },
   {
+    id: 'about',
+    label: 'About',
+    href: '#about',
+    icon: ({ active, className = 'w-5 h-5' }) => (
+      <svg
+        className={className}
+        viewBox="0 0 24 24"
+        fill={active ? 'currentColor' : 'none'}
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="m19 21-7-4.5L5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+      </svg>
+    ),
+  },
+  {
     id: 'services',
-    label: 'Category',
+    label: 'Services',
     href: '#services',
     icon: ({ active, className = 'w-5 h-5' }) => (
       <svg
@@ -51,7 +69,7 @@ const NAV_TABS: NavTab[] = [
   },
   {
     id: 'projects',
-    label: 'Cart',
+    label: 'Projects',
     href: '#projects',
     icon: ({ active, className = 'w-5 h-5' }) => (
       <svg
@@ -70,26 +88,8 @@ const NAV_TABS: NavTab[] = [
     ),
   },
   {
-    id: 'team',
-    label: 'Save',
-    href: '#team',
-    icon: ({ active, className = 'w-5 h-5' }) => (
-      <svg
-        className={className}
-        viewBox="0 0 24 24"
-        fill={active ? 'currentColor' : 'none'}
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="m19 21-7-4.5L5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
-      </svg>
-    ),
-  },
-  {
     id: 'contact',
-    label: 'Profile',
+    label: 'Contact',
     href: '#/contact',
     icon: ({ active, className = 'w-5 h-5' }) => (
       <svg
@@ -119,27 +119,37 @@ export const FloatingNavbar: React.FC<FloatingNavbarProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState('top');
 
-  // Sync active tab with user scroll position across sections
+  // Track hash changes & scroll position to accurately update active tab
   useEffect(() => {
-    const handleScroll = () => {
+    const handleHash = () => {
       if (window.location.hash === '#/contact') {
         setActiveTab('contact');
-        return;
+      } else if (!window.location.hash || window.location.hash === '#top') {
+        setActiveTab('top');
       }
+    };
 
-      const scrollPos = window.scrollY + 260;
+    window.addEventListener('hashchange', handleHash);
+    handleHash();
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
-      // Section mapping
-      const sectionMap = [
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.location.hash === '#/contact') return;
+
+      const scrollPos = window.scrollY + 280;
+
+      // Ordered as sections appear down the page
+      const sectionOrder = [
         { id: 'top', elementId: 'top' },
+        { id: 'about', elementId: 'about' },
         { id: 'services', elementId: 'services' },
         { id: 'projects', elementId: 'projects' },
-        { id: 'team', elementId: 'team' },
-        { id: 'contact', elementId: 'contact' },
       ];
 
-      for (let i = sectionMap.length - 1; i >= 0; i--) {
-        const item = sectionMap[i];
+      for (let i = sectionOrder.length - 1; i >= 0; i--) {
+        const item = sectionOrder[i];
         const el = document.getElementById(item.elementId);
         if (el && scrollPos >= el.offsetTop) {
           setActiveTab(item.id);
@@ -158,25 +168,36 @@ export const FloatingNavbar: React.FC<FloatingNavbarProps> = ({
   }, []);
 
   const handleTabClick = (tab: NavTab, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setActiveTab(tab.id);
 
     if (tab.id === 'contact') {
       if (onContactClick) {
-        e.preventDefault();
         onContactClick();
-        return;
+      } else {
+        window.location.hash = '#/contact';
       }
-      window.location.hash = '#/contact';
       return;
     }
 
-    if (tab.href.startsWith('#')) {
-      const targetId = tab.href.replace('#', '');
-      const el = document.getElementById(targetId);
-      if (el) {
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+    // If currently on a sub-route (e.g. #/contact or #/admin), reset hash to return to main portfolio
+    if (window.location.hash.startsWith('#/')) {
+      window.location.hash = '';
+      setTimeout(() => {
+        const targetId = tab.href.replace('#', '');
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+      return;
+    }
+
+    const targetId = tab.href.replace('#', '');
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -193,6 +214,7 @@ export const FloatingNavbar: React.FC<FloatingNavbarProps> = ({
           return (
             <button
               key={tab.id}
+              type="button"
               onClick={(e) => handleTabClick(tab, e)}
               className={`relative flex items-center justify-center rounded-full transition-all duration-300 focus:outline-none select-none ${
                 isActive
