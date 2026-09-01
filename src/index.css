@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Helvetica Neue ME is loaded from db.onlinewebfonts.com via a <link> in
+  index.html (print->all pattern). That URL serves a CSS file, not a raw font
+  binary, so it must NOT be referenced from an @font-face src.
+  Kanit is loaded from Google Fonts in index.html as well.
+*/
+
+/*
+  ---------- Shared section curve ----------
+  One radius drives the whole page's section-to-section curves: the black
+  marquee panel that arcs down over the hero, and the white services panel.
+  Declared as a variable so the hero can extend itself by exactly the same
+  amount it gets overlapped by, and the two can never drift apart.
+*/
+:root {
+  --section-curve: 40px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --section-curve: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-curve: 60px;
+  }
+}
+
+/* ---------- Global reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  background-color: #0c0c0c;
+  color: #d7e2ea;
+  font-family: 'Kanit', sans-serif;
+  /* The page is a multi-section portfolio, so vertical scrolling must stay
+     enabled. Only the editorial hero clips its own overflow. */
+  overflow-x: clip;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Gradient display heading ---------- */
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(4vh) scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animLine {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Gentle continuous drift for the decorative 3D objects. */
+@keyframes floatDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, calc(var(--float-distance, 14px) * -1), 0)
+      rotate(var(--float-tilt, 3deg));
+  }
+}
+
+/* ---------- Entrance animation classes ---------- */
+.anim-fade-in {
+  animation: fadeIn 1.2s ease-out both;
+}
+
+.anim-rise-in {
+  animation: riseIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.anim-fade-up {
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.anim-line {
+  animation: animLine 1.1s cubic-bezier(0.76, 0, 0.24, 1) both;
+  transform-origin: left;
+}
+
+/* ---------- Continuous name marquee (track = two identical halves) ---------- */
+.marquee {
+  animation: marqueeScroll 30s linear infinite;
+}
+
+/*
+  Floating decorative object. Applied to the <img> rather than its FadeIn
+  wrapper, because the wrapper's transform is owned by Framer Motion for the
+  entrance animation and the two would otherwise overwrite each other.
+  Per-instance duration/delay/distance/tilt come from inline custom properties
+  so the four objects drift independently instead of moving in lockstep.
+*/
+.floaty {
+  animation: floatDrift var(--float-duration, 7s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+  will-change: transform;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-in,
+  .anim-rise-in,
+  .anim-fade-up,
+  .anim-line {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+  }
+
+  /* An indefinitely scrolling headline is a WCAG 2.2.2 concern, so the
+     marquee is parked rather than merely sped up. */
+  .marquee {
+    animation: none !important;
+  }
+
+  .floaty {
+    animation: none !important;
+  }
+}
