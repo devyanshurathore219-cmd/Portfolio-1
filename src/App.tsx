@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { FloatingNavbar } from './components/FloatingNavbar';
 import { EditorialHero } from './components/EditorialHero';
 import { TeamSection } from './components/TeamSection';
 import { MarqueeSection } from './components/MarqueeSection';
@@ -56,6 +57,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="bg-[#0C0C0C] text-[#D7E2EA] font-kanit min-h-screen overflow-x-clip selection:bg-white selection:text-black">
+      <FloatingNavbar onContactClick={openContact} />
       <main>
         <EditorialHero />
         <MarqueeSection />
