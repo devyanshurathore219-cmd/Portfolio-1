@@ -10,10 +10,10 @@ const BG_IMAGE =
 
 const FRONT_PORTRAIT = '/assets/images/devyanshu_hero_avatar.png';
 
-const FIRST_NAME = 'DigiWebNow';
-const LAST_NAME = '';
 const BRAND = 'DigiWebNow';
-const YEAR = '2026';
+const YEAR = '';
+
+const HERO_MARQUEE = 'CUSTOM WEB DEVELOPMENT \u2022 FULL-STACK ARCHITECTURE \u2022 UI/UX DESIGN \u2022 HIGH PERFORMANCE WEBSITES';
 
 const SOCIAL_LINKS = [
   { label: 'Instagram', href: 'https://instagram.com/officialdigiwebnow' },
@@ -29,7 +29,13 @@ const DRAWER_LINKS = [
   { label: 'Contact', href: '#/contact' },
 ];
 
-const FOOTER_LEFT = ['Custom Web Engineer', 'Founder of DigiWebNow', 'BCA — MERI Institute'];
+const FOOTER_LEFT = [
+  'Custom Web & E-Commerce Development',
+  'Full-Stack Web Apps & Cloud Architecture',
+  'Modern UI/UX Design & High-Converting Websites',
+  'API Integrations & Database Engineering',
+  'Speed, SEO & Core Web Vitals Optimization',
+];
 const FOOTER_RIGHT = ['Featured live work', 'iYOU Global & Gaur Furniture'];
 
 const EASE_DRAWER = 'cubic-bezier(0.76, 0, 0.24, 1)';
@@ -88,7 +94,7 @@ export const EditorialHero: React.FC = () => {
 
   const marqueeSpan = (
     <span className="pr-[6vw]">
-      {FIRST_NAME}{LAST_NAME ? ` \u2014 ${LAST_NAME}` : ''}&nbsp;
+      {HERO_MARQUEE}&nbsp;&bull;&nbsp;
     </span>
   );
 
@@ -108,13 +114,13 @@ export const EditorialHero: React.FC = () => {
         className="anim-fade-in absolute inset-0 h-full w-full object-cover"
       />
 
-      {/* ---------- Marquee name (z-10) with depth parallax ---------- */}
+      {/* ---------- Marquee services title (z-10) with depth parallax ---------- */}
       <motion.div
         style={{ x: marqueeParallaxX }}
-        className="anim-fade-up absolute inset-x-0 top-[16vh] z-10 overflow-hidden sm:top-[14vh]"
+        className="anim-fade-up absolute inset-x-0 top-[18vh] z-10 overflow-hidden sm:top-[16vh]"
         aria-hidden="true"
       >
-        <div className="marquee flex w-max whitespace-nowrap font-hn text-[16vh] leading-none text-cream sm:text-[26vh]">
+        <div className="marquee flex w-max whitespace-nowrap font-hn text-[12vh] leading-none text-cream sm:text-[18vh] font-semibold tracking-tight">
           {marqueeSpan}
           {marqueeSpan}
         </div>
