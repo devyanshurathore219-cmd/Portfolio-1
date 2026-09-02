@@ -63,7 +63,7 @@ const TEAM: Teammate[] = [
   },
   {
     name: "",
-    role: "Junior Frontend & UI",
+    role: " Frontend UI & UX Designer",
     detail: "React • Tailwind • UI/UX",
     image: "/assets/images/team_frontend_ui.jpg",
     initials: "AG",
