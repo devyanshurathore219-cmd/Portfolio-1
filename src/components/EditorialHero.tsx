@@ -92,7 +92,7 @@ export const EditorialHero: React.FC = () => {
   }, [open]);
 
   const marqueeSpan = (
-    <span className="pr-[6vw]">
+    <span className="pr-[6vw] font-kanit font-black uppercase tracking-tight">
       {HERO_MARQUEE}&nbsp;&bull;&nbsp;
     </span>
   );
@@ -120,7 +120,7 @@ export const EditorialHero: React.FC = () => {
         aria-hidden="true"
       >
         <div
-          className="marquee flex w-max whitespace-nowrap font-hn text-[12vh] leading-none text-cream sm:text-[18vh] font-semibold tracking-tight"
+          className="marquee flex w-max whitespace-nowrap font-kanit font-black uppercase tracking-tight text-[13vh] leading-none text-cream/90 sm:text-[20vh]"
           style={{ animationDuration: '90s' }}
         >
           {marqueeSpan}
@@ -156,13 +156,14 @@ export const EditorialHero: React.FC = () => {
 
       {/* ---------- Header with Centered Segmented Bar (z-30) ---------- */}
       <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-6 pt-6 sm:px-10 sm:pt-8">
-        {/* Left: Brand Name */}
+        {/* Left: Brand Name (Bold and Distinctive Logo) */}
         <a
           href="#top"
-          className="anim-fade-up font-hn text-lg tracking-wide transition-opacity duration-300 hover:opacity-60 z-10 min-w-[100px]"
+          className="anim-fade-up font-kanit font-black text-xl sm:text-2xl tracking-wider uppercase text-white hover:text-[#00f2fe] transition-all duration-300 z-10 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)] flex items-center gap-1.5"
           style={{ animationDelay: '800ms' }}
         >
-          {BRAND}
+          <span>{BRAND}</span>
+          <span className="text-[#00f2fe] text-sm">&bull;</span>
         </a>
 
         {/* Center space kept clear for the Floating Capsule Navbar */}
