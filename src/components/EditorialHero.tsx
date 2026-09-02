@@ -128,13 +128,13 @@ export const EditorialHero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* ---------- Horizontal cream rule (z-30 - sits cleanly above the cropped base) ---------- */}
+      {/* ---------- Horizontal cream rule (z-10) ---------- */}
       <div
-        className="anim-line absolute inset-x-6 bottom-[calc(6.8rem_+_var(--section-curve))] z-30 h-0.5 bg-cream/90 sm:inset-x-10 sm:bottom-[calc(8rem_+_var(--section-curve))]"
+        className="anim-line absolute inset-x-6 bottom-[calc(5.5rem_+_var(--section-curve))] z-10 h-0.5 bg-cream sm:inset-x-10 sm:bottom-[calc(7rem_+_var(--section-curve))]"
         style={{ animationDelay: '1200ms' }}
       />
 
-      {/* ---------- 3D Interactive Avatar Portrait (Centered, Larger, Anchored at Line) ---------- */}
+      {/* ---------- 3D Interactive Avatar Portrait (z-20) ---------- */}
       <motion.div
         style={{
           x: avatarX,
@@ -144,12 +144,12 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[calc(6.8rem_+_var(--section-curve))] sm:bottom-[calc(8rem_+_var(--section-curve))] left-1/2 -translate-x-1/2 z-20 h-[96vh] sm:h-[104vh] max-h-[1150px] w-auto flex items-end will-change-transform"
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-[35%] z-20 h-[92vh] sm:h-[96vh] max-h-[1050px] w-auto flex items-end will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
           alt="DigiWebNow Portrait"
-          className="anim-rise-in h-full w-auto object-contain object-bottom drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
+          className="anim-rise-in h-full w-auto object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           style={{ animationDelay: '300ms' }}
         />
       </motion.div>
