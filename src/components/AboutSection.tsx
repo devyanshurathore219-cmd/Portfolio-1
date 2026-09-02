@@ -2,7 +2,7 @@ import React from 'react';
 import { FadeIn } from './FadeIn';
 import { AnimatedText } from './AnimatedText';
 import { ContactButton } from './ContactButton';
-import { GraduationCap, Award, Cpu, Code2 } from 'lucide-react';
+import { Rocket, ShieldCheck, Cpu, Code2 } from 'lucide-react';
 
 const MOON_ICON = "https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png";
 const OBJECT_3D_LEFT = "https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png";
@@ -23,80 +23,52 @@ export const AboutSection: React.FC = () => {
       <FadeIn
         delay={0.1}
         duration={0.9}
-        x={-80}
         y={0}
-        className="absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%] z-0 pointer-events-none opacity-60"
+        className="absolute top-8 left-8 w-24 sm:w-32 md:w-40 pointer-events-none select-none z-0"
       >
         <img
           src={MOON_ICON}
-          alt="3D Moon Icon"
-          className="floaty w-[120px] sm:w-[160px] md:w-[210px] h-auto object-contain drop-shadow-xl"
-          style={{
-            '--float-duration': '6.5s',
-            '--float-delay': '0.2s',
-            '--float-distance': '16px',
-            '--float-tilt': '3deg',
-          } as React.CSSProperties}
-        />
-      </FadeIn>
-
-      <FadeIn
-        delay={0.25}
-        duration={0.9}
-        x={-80}
-        y={0}
-        className="absolute bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%] z-0 pointer-events-none opacity-60"
-      >
-        <img
-          src={OBJECT_3D_LEFT}
-          alt="3D Shape Object"
-          className="floaty w-[100px] sm:w-[140px] md:w-[180px] h-auto object-contain drop-shadow-xl"
-          style={{
-            '--float-duration': '8s',
-            '--float-delay': '0.8s',
-            '--float-distance': '12px',
-            '--float-tilt': '-4deg',
-          } as React.CSSProperties}
+          alt=""
+          className="w-full h-auto object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] transform hover:scale-105 transition-transform"
         />
       </FadeIn>
 
       <FadeIn
         delay={0.15}
         duration={0.9}
-        x={80}
         y={0}
-        className="absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%] z-0 pointer-events-none opacity-60"
+        className="absolute bottom-10 left-6 sm:left-12 w-28 sm:w-36 md:w-44 pointer-events-none select-none z-0"
       >
         <img
-          src={LEGO_ICON}
-          alt="3D Lego Icon"
-          className="floaty w-[120px] sm:w-[160px] md:w-[210px] h-auto object-contain drop-shadow-xl"
-          style={{
-            '--float-duration': '7.2s',
-            '--float-delay': '0.4s',
-            '--float-distance': '14px',
-            '--float-tilt': '-3deg',
-          } as React.CSSProperties}
+          src={OBJECT_3D_LEFT}
+          alt=""
+          className="w-full h-auto object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] animate-pulse"
         />
       </FadeIn>
 
       <FadeIn
-        delay={0.3}
+        delay={0.2}
         duration={0.9}
-        x={80}
         y={0}
-        className="absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%] z-0 pointer-events-none opacity-60"
+        className="absolute top-10 right-8 w-20 sm:w-28 md:w-36 pointer-events-none select-none z-0"
+      >
+        <img
+          src={LEGO_ICON}
+          alt=""
+          className="w-full h-auto object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)]"
+        />
+      </FadeIn>
+
+      <FadeIn
+        delay={0.25}
+        duration={0.9}
+        y={0}
+        className="absolute bottom-12 right-6 sm:right-12 w-28 sm:w-36 md:w-48 pointer-events-none select-none z-0"
       >
         <img
           src={GROUP_3D_RIGHT}
-          alt="3D Group Object"
-          className="floaty w-[130px] sm:w-[170px] md:w-[220px] h-auto object-contain drop-shadow-xl"
-          style={{
-            '--float-duration': '9s',
-            '--float-delay': '1.2s',
-            '--float-distance': '18px',
-            '--float-tilt': '4deg',
-          } as React.CSSProperties}
+          alt=""
+          className="w-full h-auto object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
         />
       </FadeIn>
 
@@ -114,27 +86,27 @@ export const AboutSection: React.FC = () => {
           <AnimatedText text={ABOUT_TEXT} />
         </div>
 
-        {/* Credentials Grid */}
+        {/* Credentials & Quality Criteria Grid */}
         <FadeIn delay={0.2} y={30} className="w-full mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-          <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-            <GraduationCap className="w-6 h-6 text-[#00f2fe] mb-2" />
-            <div className="text-white font-bold text-sm">BCA Graduate</div>
-            <div className="text-xs text-[#D7E2EA]/60">MERI Institute</div>
+          <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00f2fe]/40 transition-all">
+            <Rocket className="w-6 h-6 text-[#00f2fe] mb-2" />
+            <div className="text-white font-bold text-sm">Custom Engineering</div>
+            <div className="text-xs text-[#D7E2EA]/60">High-Performance Code</div>
           </div>
-          <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-            <Award className="w-6 h-6 text-[#00f2fe] mb-2" />
-            <div className="text-white font-bold text-sm">DCA Certification</div>
-            <div className="text-xs text-[#D7E2EA]/60">Computer Applications</div>
-          </div>
-          <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+          <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00f2fe]/40 transition-all">
             <Cpu className="w-6 h-6 text-[#00f2fe] mb-2" />
-            <div className="text-white font-bold text-sm">Web Architecture</div>
-            <div className="text-xs text-[#D7E2EA]/60">Full-Stack Custom Code</div>
+            <div className="text-white font-bold text-sm">Full-Stack Cloud</div>
+            <div className="text-xs text-[#D7E2EA]/60">Scalable Architecture</div>
           </div>
-          <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+          <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00f2fe]/40 transition-all">
             <Code2 className="w-6 h-6 text-[#00f2fe] mb-2" />
-            <div className="text-white font-bold text-sm">Adobe Photoshop</div>
-            <div className="text-xs text-[#D7E2EA]/60">UI/UX & Graphics</div>
+            <div className="text-white font-bold text-sm">UI/UX Design</div>
+            <div className="text-xs text-[#D7E2EA]/60">Figma & Design Systems</div>
+          </div>
+          <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00f2fe]/40 transition-all">
+            <ShieldCheck className="w-6 h-6 text-[#00f2fe] mb-2" />
+            <div className="text-white font-bold text-sm">Enterprise Quality</div>
+            <div className="text-xs text-[#D7E2EA]/60">Secure, Fast & SEO Ready</div>
           </div>
         </FadeIn>
 
