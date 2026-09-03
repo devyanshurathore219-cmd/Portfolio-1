@@ -1,12 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 /* ------------------------------------------------------------------ *
  * Assets — exact URLs from the spec, not substituted.
  * ------------------------------------------------------------------ */
-const VIDEO_SRC =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260530_042513_df96a13b-6155-4f6e-8b93-c9dee66fba08.mp4';
+const BG_IMAGE =
+  'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260729_022513_486985a2-ac8c-4278-91a8-071dcd9fcaff.png&w=1280&q=85';
+
+const FRONT_PORTRAIT = '/assets/images/devyanshu_hero_avatar.png';
 
 const BRAND = 'DigiWebNow';
 const YEAR = '';
@@ -39,16 +41,21 @@ const EASE_DRAWER = 'cubic-bezier(0.76, 0, 0.24, 1)';
 
 export const EditorialHero: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const prevXRef = useRef<number | null>(null);
-  const targetTimeRef = useRef<number>(0);
-  const isSeekingRef = useRef<boolean>(false);
-  const SENSITIVITY = 0.8;
 
-  /* 3D Mouse Parallax physics */
+  /* 3D Mouse Parallax & Tilt physics */
   const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
   const springConfig = { damping: 20, stiffness: 120, mass: 0.6 };
   const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+
+  // Responsive 3D transforms for the avatar
+  const avatarX = useTransform(smoothX, [-0.5, 0.5], [-45, 45]);
+  const avatarY = useTransform(smoothY, [-0.5, 0.5], [-20, 20]);
+  const rotateY = useTransform(smoothX, [-0.5, 0.5], [-10, 10]);
+  const rotateX = useTransform(smoothY, [-0.5, 0.5], [6, -6]);
+  const avatarScale = useTransform(smoothX, [-0.5, 0, 0.5], [1.02, 1, 1.02]);
 
   // Subtle depth parallax for background marquee
   const marqueeParallaxX = useTransform(smoothX, [-0.5, 0.5], [20, -20]);
@@ -56,65 +63,15 @@ export const EditorialHero: React.FC = () => {
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
     mouseX.set(x);
+    mouseY.set(y);
   };
 
   const handleMouseLeave = () => {
     mouseX.set(0);
-    prevXRef.current = null;
+    mouseY.set(0);
   };
-
-  /* Mouse-scrub controlled video scrubbing */
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleLoadedMetadata = () => {
-      targetTimeRef.current = video.duration * 0.3;
-      video.currentTime = targetTimeRef.current;
-    };
-
-    video.addEventListener('loadedmetadata', handleLoadedMetadata);
-
-    const seekNext = () => {
-      if (!video || isSeekingRef.current) return;
-      if (Math.abs(video.currentTime - targetTimeRef.current) > 0.015) {
-        isSeekingRef.current = true;
-        video.currentTime = targetTimeRef.current;
-      }
-    };
-
-    const handleSeeked = () => {
-      isSeekingRef.current = false;
-      seekNext();
-    };
-
-    video.addEventListener('seeked', handleSeeked);
-
-    const handleWindowMouseMove = (e: MouseEvent) => {
-      if (prevXRef.current === null) {
-        prevXRef.current = e.clientX;
-        return;
-      }
-      const delta = e.clientX - prevXRef.current;
-      prevXRef.current = e.clientX;
-
-      if (!video.duration || Number.isNaN(video.duration)) return;
-
-      const timeOffset = (delta / window.innerWidth) * SENSITIVITY * video.duration;
-      targetTimeRef.current = Math.max(0, Math.min(video.duration, targetTimeRef.current + timeOffset));
-
-      seekNext();
-    };
-
-    window.addEventListener('mousemove', handleWindowMouseMove);
-
-    return () => {
-      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      video.removeEventListener('seeked', handleSeeked);
-      window.removeEventListener('mousemove', handleWindowMouseMove);
-    };
-  }, []);
 
   /* Lock the page while the drawer is open. */
   useEffect(() => {
@@ -148,15 +105,12 @@ export const EditorialHero: React.FC = () => {
       className="relative h-[calc(100dvh_+_var(--section-curve))] w-full overflow-hidden bg-black font-hn text-cream select-none"
       style={{ perspective: '1200px' }}
     >
-      {/* ---------- Background 3D Model Video (mouse-scrub controlled, z-0) ---------- */}
-      <video
-        ref={videoRef}
-        src={VIDEO_SRC}
-        muted
-        playsInline
-        preload="auto"
-        className="anim-fade-in absolute inset-0 h-full w-full object-cover z-0 pointer-events-none"
-        style={{ objectPosition: '70% center' }}
+      {/* ---------- Background image (bottom layer) ---------- */}
+      <img
+        src={BG_IMAGE}
+        alt=""
+        aria-hidden="true"
+        className="anim-fade-in absolute inset-0 h-full w-full object-cover"
       />
 
       {/* ---------- Marquee services title (z-10) with depth parallax ---------- */}
@@ -179,6 +133,26 @@ export const EditorialHero: React.FC = () => {
         className="anim-line absolute inset-x-6 bottom-[calc(5.5rem_+_var(--section-curve))] z-10 h-0.5 bg-cream sm:inset-x-10 sm:bottom-[calc(7rem_+_var(--section-curve))]"
         style={{ animationDelay: '1200ms' }}
       />
+
+      {/* ---------- 3D Interactive Avatar Portrait (z-20) ---------- */}
+      <motion.div
+        style={{
+          x: avatarX,
+          y: avatarY,
+          rotateY: rotateY,
+          rotateX: rotateX,
+          scale: avatarScale,
+          transformStyle: 'preserve-3d',
+        }}
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-[35%] z-20 h-[92vh] sm:h-[96vh] max-h-[1050px] w-auto flex items-end will-change-transform"
+      >
+        <img
+          src={FRONT_PORTRAIT}
+          alt="DigiWebNow Portrait"
+          className="anim-rise-in h-full w-auto object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+          style={{ animationDelay: '300ms' }}
+        />
+      </motion.div>
 
       {/* ---------- Header with Centered Segmented Bar (z-30) ---------- */}
       <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-6 pt-6 sm:px-10 sm:pt-8">
