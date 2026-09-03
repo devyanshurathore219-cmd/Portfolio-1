@@ -128,12 +128,6 @@ export const EditorialHero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* ---------- Horizontal cream rule (z-10) ---------- */}
-      <div
-        className="anim-line absolute inset-x-6 bottom-[calc(5.5rem_+_var(--section-curve))] z-10 h-0.5 bg-cream sm:inset-x-10 sm:bottom-[calc(7rem_+_var(--section-curve))]"
-        style={{ animationDelay: '1200ms' }}
-      />
-
       {/* ---------- 3D Interactive Avatar Portrait (z-20) ---------- */}
       <motion.div
         style={{
@@ -153,6 +147,12 @@ export const EditorialHero: React.FC = () => {
           style={{ animationDelay: '300ms' }}
         />
       </motion.div>
+
+      {/* ---------- Horizontal cream rule (z-30 - positioned above the image) ---------- */}
+      <div
+        className="anim-line absolute inset-x-6 bottom-[calc(5.5rem_+_var(--section-curve))] z-30 h-0.5 bg-cream sm:inset-x-10 sm:bottom-[calc(7rem_+_var(--section-curve))]"
+        style={{ animationDelay: '1200ms' }}
+      />
 
       {/* ---------- Header with Centered Segmented Bar (z-30) ---------- */}
       <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-6 pt-6 sm:px-10 sm:pt-8">
