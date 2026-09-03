@@ -128,7 +128,7 @@ export const EditorialHero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* ---------- 3D Interactive Avatar Portrait (z-20) ---------- */}
+      {/* ---------- 3D Interactive Avatar Portrait (z-20 - anchored cleanly on the horizontal line) ---------- */}
       <motion.div
         style={{
           x: avatarX,
@@ -138,7 +138,7 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[var(--section-curve)] left-[35%] z-20 h-[92vh] sm:h-[96vh] max-h-[1050px] w-auto flex items-end will-change-transform"
+        className="pointer-events-none absolute bottom-[calc(5.5rem_+_var(--section-curve))] sm:bottom-[calc(7rem_+_var(--section-curve))] left-[35%] z-20 h-[88vh] sm:h-[92vh] max-h-[1000px] w-auto flex items-end will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
@@ -148,7 +148,7 @@ export const EditorialHero: React.FC = () => {
         />
       </motion.div>
 
-      {/* ---------- Horizontal cream rule (z-30 - positioned above the image) ---------- */}
+      {/* ---------- Horizontal cream rule (z-30 - sitting directly at the avatar baseline) ---------- */}
       <div
         className="anim-line absolute inset-x-6 bottom-[calc(5.5rem_+_var(--section-curve))] z-30 h-0.5 bg-cream sm:inset-x-10 sm:bottom-[calc(7rem_+_var(--section-curve))]"
         style={{ animationDelay: '1200ms' }}
