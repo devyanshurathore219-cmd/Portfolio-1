@@ -164,6 +164,16 @@ body {
   will-change: transform;
 }
 
+/* ---------- Avatar clip at horizontal rule ---------- */
+.avatar-crop-at-line {
+  clip-path: inset(0 0 5.5rem 0);
+}
+@media (min-width: 640px) {
+  .avatar-crop-at-line {
+    clip-path: inset(0 0 7rem 0);
+  }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   .anim-fade-in,
