@@ -8,7 +8,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 const BG_IMAGE =
   'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260729_022513_486985a2-ac8c-4278-91a8-071dcd9fcaff.png&w=1280&q=85';
 
-const FRONT_PORTRAIT = '/assets/images/devyanshu_hero_avatar.png';
+const FRONT_PORTRAIT = '/assets/images/devyanshu_hero_hd.png';
 
 const BRAND = 'DigiWebNow';
 const YEAR = '';
