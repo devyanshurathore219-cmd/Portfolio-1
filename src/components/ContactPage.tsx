@@ -14,7 +14,7 @@ import {
 } from '../utils/excelStorage';
 
 const INQUIRY_EMAIL = 'infodigiwebnow@gmail.com';
-const PHONES = ['817-869-9658', '9870324454'];
+const PHONES = ['98108 37875', '9870324454'];
 const INSTAGRAM = { handle: '@officialdigiwebnow', url: 'https://instagram.com/officialdigiwebnow' };
 
 const STUDIO: { hours: string; address: string[] } = {
@@ -340,7 +340,7 @@ export const ContactPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                         <input
                           id="cf-phone"
                           type="tel"
-                          placeholder="+1 817-869-9658"
+                          placeholder="+91 98108 37875"
                           autoComplete="tel"
                           className={FIELD}
                           value={form.phone}
@@ -447,3 +447,4 @@ export const ContactPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
     </div>
   );
 };
+
