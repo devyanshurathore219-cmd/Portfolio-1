@@ -265,30 +265,12 @@ export const TeamSection: React.FC = () => {
     <section
       ref={sectionRef}
       id="team"
-      className="relative min-h-screen flex flex-col justify-between overflow-x-clip bg-[#0C0C0C]"
+      className="relative min-h-screen flex flex-col justify-between overflow-x-clip bg-[#0C0C0C] py-8 sm:py-10"
     >
       {/* Headline — a continuously looping band of the section title */}
-      <div className="w-full overflow-hidden z-0 my-auto py-8">
+      <div className="w-full overflow-hidden z-0 my-auto py-4 sm:py-8">
         <FadeIn delay={0.15} y={40} className="w-full text-center">
-          {/*
-            The band repeats the words, so it is aria-hidden and the section's
-            real heading is kept for assistive tech only — otherwise a screen
-            reader would announce "Our Team" six times.
-          */}
           <h2 className="sr-only">Our Team</h2>
-
-          {/*
-            Same construction as the hero's name marquee: .marquee translates the
-            track by -50%, so the track has to be two identical halves for the
-            wrap to be invisible. Each half is BAND_REPEATS identical cells, and
-            because every cell is identical the seam lands mid-pattern and cannot
-            be seen.
-
-            The entrance animation stays on the FadeIn wrapper and the scroll
-            lives on this inner track, so the two transforms never overwrite
-            each other. .marquee is also parked under prefers-reduced-motion in
-            index.css (WCAG 2.2.2), which leaves a static band of the words.
-          */}
           <div
             className="marquee hero-heading flex w-max whitespace-nowrap font-black uppercase tracking-tight leading-none text-[11vw] select-none"
             aria-hidden="true"
@@ -303,27 +285,91 @@ export const TeamSection: React.FC = () => {
         </FadeIn>
       </div>
 
-      {/* Centred card cluster: founder card in the middle, team fanned over it */}
+      {/* ---------- MOBILE / TABLET LAYOUT (< md) ---------- */}
+      <div className="block md:hidden w-full px-4 my-6 z-10">
+        {/* Mobile Founder Card */}
+        <FadeIn delay={0.2} y={20} className="max-w-[280px] sm:max-w-[320px] mx-auto">
+          <div className="relative w-full rounded-3xl overflow-hidden border border-[#00f2fe]/40 shadow-2xl bg-neutral-900/90 text-left">
+            <img
+              src={DEVYANSHU_PORTRAIT}
+              alt="DigiWebNow - Lead Web Architect"
+              className="w-full h-[320px] sm:h-[380px] object-cover object-top select-none"
+            />
+            <div className="absolute bottom-3 left-3 right-3 bg-black/85 p-2.5 rounded-2xl border border-white/10 flex items-center justify-between backdrop-blur-md">
+              <div>
+                <div className="text-white font-bold text-xs sm:text-sm">DigiWebNow &bull;</div>
+                <div className="text-[10px] sm:text-xs text-[#00f2fe]">Lead Full-Stack Architect</div>
+              </div>
+              <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-[#00f2fe]" />
+            </div>
+          </div>
+        </FadeIn>
+
+        {/* Mobile Core Team Grid */}
+        <div className="mt-8 max-w-sm sm:max-w-md mx-auto">
+          <div className="text-center mb-3">
+            <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#00f2fe]/90 bg-[#00f2fe]/10 px-3 py-1 rounded-full border border-[#00f2fe]/20">
+              Core Engineering Team
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5">
+            {TEAM.map((mate, i) => {
+              const showPhoto = !!mate.image && !brokenImages[mate.name];
+              return (
+                <FadeIn key={mate.role} delay={0.25 + i * 0.1} y={15}>
+                  <div className="rounded-2xl overflow-hidden border border-[#00f2fe]/25 bg-neutral-900/95 shadow-lg">
+                    <div className={`relative aspect-[3/4] overflow-hidden bg-gradient-to-br ${mate.gradient}`}>
+                      <span className="absolute inset-0 flex items-center justify-center font-black text-white/90 text-2xl select-none">
+                        {mate.initials}
+                      </span>
+
+                      {showPhoto && (
+                        <img
+                          src={mate.image}
+                          alt={mate.role}
+                          loading="lazy"
+                          decoding="async"
+                          onError={() =>
+                            setBrokenImages((broken) => ({ ...broken, [mate.name]: true }))
+                          }
+                          className="absolute inset-0 h-full w-full object-cover object-top"
+                        />
+                      )}
+
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                      <div className="absolute inset-x-1.5 bottom-1.5 rounded-xl border border-white/10 bg-black/85 px-2 py-1.5 text-left backdrop-blur-xs">
+                        <div className="text-[10px] font-bold text-[#00f2fe] leading-tight">
+                          {mate.role}
+                        </div>
+                        <div className="text-[8.5px] text-white/60 mt-0.5 leading-tight line-clamp-1">
+                          {mate.detail}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* ---------- DESKTOP CARD CLUSTER (>= md) ---------- */}
       <div
         ref={clusterRef}
         id="team-fan"
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[260px] sm:w-[320px] md:w-[400px] lg:w-[460px]"
+        className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[400px] lg:w-[460px]"
       >
-        {/*
-          The team. Every card animates on the same beat — no per-card delay on
-          the way in — so scrolling to the section brings the whole hand out at
-          once. They carry a z-index above the founder card so none of them is
-          clipped by it; folding sends them back underneath.
-        */}
         {TEAM.map((mate, i) => {
           const showPhoto = !!mate.image && !brokenImages[mate.name];
 
           return (
             <motion.div
-              key={mate.name}
+              key={mate.role}
               ref={i === 0 ? cardRef : undefined}
               aria-hidden={!open}
-              className="absolute left-1/2 top-1/2 w-[130px] sm:w-[150px] md:w-[170px] -ml-[65px] sm:-ml-[75px] md:-ml-[85px] -mt-[87px] sm:-mt-[100px] md:-mt-[113px]"
+              className="absolute left-1/2 top-1/2 w-[160px] lg:w-[170px] -ml-[80px] lg:-ml-[85px] -mt-[107px] lg:-mt-[113px]"
               initial={false}
               animate={{
                 x: open ? offsetX(mate) : 0,
@@ -334,43 +380,19 @@ export const TeamSection: React.FC = () => {
               }}
               transition={{
                 duration: reduceMotion ? 0 : 0.6,
-                /* Staggered both ways: outward in order on the way open, and in
-                   reverse on the way closed, so the hand reads as fanning out
-                   and folding back rather than all four snapping at once. */
                 delay: reduceMotion ? 0 : (open ? i : TEAM.length - 1 - i) * 0.05,
                 ease: [0.22, 1, 0.36, 1],
               }}
               style={{
-                /* Folded cards are invisible, so they must not intercept
-                   pointer events; open ones stay selectable. */
                 pointerEvents: open ? 'auto' : 'none',
                 zIndex: open ? 30 + i : 0,
-                /*
-                  Held permanently rather than left to the animation. Framer
-                  Motion sets will-change only once a transition starts, which
-                  meant all four cards were promoted to compositor layers inside
-                  the first animation frame — a measured spike right on the
-                  reveal. Four small layers kept alive costs little and the fan
-                  runs on every entry and exit of the section.
-                */
                 willChange: 'transform, opacity',
               }}
             >
-              {/*
-                No backdrop-blur on these, deliberately. Every teammate card and
-                the info panel inside it used to carry backdrop-blur-md, which
-                meant eight backdrop-filter layers all being transformed at once
-                during the fan. A moving element with a backdrop-filter forces
-                the compositor to re-read and re-blur what is behind it every
-                frame, and that was the other half of the stutter. The fills are
-                90% and 80% opaque, so the blur was contributing almost nothing
-                visually anyway.
-              */}
               <div className="rounded-3xl overflow-hidden border border-[#00f2fe]/25 bg-neutral-900/95 shadow-xl">
                 <div
                   className={`relative aspect-[3/4] overflow-hidden bg-gradient-to-br ${mate.gradient}`}
                 >
-                  {/* Initials sit underneath the portrait as the fallback. */}
                   <span className="absolute inset-0 flex items-center justify-center font-black text-white/90 text-[clamp(1.75rem,4vw,2.75rem)] select-none">
                     {mate.initials}
                   </span>
@@ -378,15 +400,8 @@ export const TeamSection: React.FC = () => {
                   {showPhoto && (
                     <img
                       src={mate.image}
-                      alt={`${mate.name}, ${mate.role}`}
+                      alt={mate.role}
                       loading="lazy"
-                      /*
-                        The four portraits were decoding synchronously in the
-                        same frame the fan started animating — a measured 108ms
-                        hitch right at the reveal. decoding="async" lets the
-                        browser decode off the main thread and paint when ready,
-                        so the spike no longer lands on the animation.
-                      */
                       decoding="async"
                       onError={() =>
                         setBrokenImages((broken) => ({ ...broken, [mate.name]: true }))
@@ -397,10 +412,10 @@ export const TeamSection: React.FC = () => {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
                   <div className="absolute inset-x-2 bottom-2 rounded-xl border border-white/10 bg-black/85 px-2.5 py-2 text-left">
-                    <div className="text-[11px] sm:text-xs font-bold text-white leading-tight">
-                      {mate.name}
+                    <div className="text-xs font-bold text-white leading-tight">
+                      {mate.name || 'DigiWebNow'}
                     </div>
-                    <div className="text-[9px] sm:text-[10px] text-[#00f2fe] mt-0.5">
+                    <div className="text-[10px] text-[#00f2fe] mt-0.5">
                       {mate.role}
                     </div>
                     <div className="text-[9px] text-white/50 mt-1 leading-tight">
@@ -413,12 +428,7 @@ export const TeamSection: React.FC = () => {
           );
         })}
 
-        {/*
-          Founder card. Presentational now that scroll drives the reveal — it was
-          a <button> while it doubled as the toggle, and leaving it one would
-          advertise an action it no longer performs and put a stop in the tab
-          order that does nothing. It stays magnetic.
-        */}
+        {/* Desktop Founder card with Magnet */}
         <FadeIn delay={0.6} y={30}>
           <Magnet
             padding={150}
@@ -426,17 +436,14 @@ export const TeamSection: React.FC = () => {
             activeTransition="transform 0.3s ease-out"
             inactiveTransition="transform 0.6s ease-in-out"
           >
-            {/* Magnet transforms this on every mousemove, so it gets the same
-                treatment as the teammate cards: no backdrop-filter on a moving
-                element. */}
             <div className="relative w-full rounded-3xl overflow-hidden border border-[#00f2fe]/30 shadow-2xl bg-neutral-900/90 text-left">
               <img
                 src={DEVYANSHU_PORTRAIT}
                 alt="DigiWebNow - Lead Web Architect"
-                className="w-full h-[380px] sm:h-[440px] md:h-[500px] object-cover object-top select-none"
+                className="w-full h-[460px] lg:h-[500px] object-cover object-top select-none"
               />
 
-              <div className="absolute bottom-4 left-4 right-4 bg-black/85 p-3 rounded-2xl border border-white/10 flex items-center justify-between">
+              <div className="absolute bottom-4 left-4 right-4 bg-black/85 p-3 rounded-2xl border border-white/10 flex items-center justify-between backdrop-blur-md">
                 <div>
                   <div className="text-white font-bold text-sm">DigiWebNow &bull;</div>
                   <div className="text-xs text-[#00f2fe]"> Lead Full-Stack Architect</div>
@@ -448,10 +455,10 @@ export const TeamSection: React.FC = () => {
         </FadeIn>
       </div>
 
-      {/* Bottom bar */}
-      <div className="w-full px-6 md:px-10 pb-7 sm:pb-8 md:pb-10 flex flex-col sm:flex-row justify-between items-center sm:items-end gap-4 z-20">
+      {/* Bottom bar with generous mobile padding to clear floating navbar */}
+      <div className="w-full px-6 md:px-10 pb-28 sm:pb-8 md:pb-10 flex flex-col sm:flex-row justify-between items-center sm:items-end gap-4 z-20">
         <FadeIn delay={0.35} y={20}>
-          <p className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug text-xs sm:text-sm max-w-[280px]">
+          <p className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug text-xs sm:text-sm max-w-[280px] text-center sm:text-left">
             Building custom websites tailored for market dominance &bull; Featured: iYOU Global & Gaur Furniture
           </p>
         </FadeIn>
