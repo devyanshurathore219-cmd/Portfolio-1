@@ -309,7 +309,7 @@ export const FeaturedClientWebsites: React.FC = () => {
           animations are unconditional, so they cannot strand a card at zero.
         */}
         <FadeIn delay={0.2} y={40}>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {others.map((project) => (
               <motion.button
                 key={project.id}
@@ -338,7 +338,7 @@ export const FeaturedClientWebsites: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-grow flex-col justify-between p-8">
+              <div className="flex flex-grow flex-col justify-between p-5 sm:p-6 md:p-8">
                 <div>
                   <div className="mb-3 flex items-center justify-between gap-2">
                     <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#00f2fe]">
