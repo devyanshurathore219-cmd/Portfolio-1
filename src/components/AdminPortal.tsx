@@ -188,12 +188,6 @@ export const AdminPortal: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               Unlock Dashboard
             </button>
           </form>
-
-          <div className="mt-6 pt-6 border-t border-white/10 text-center">
-            <p className="text-[11px] text-white/40">
-              Default owner passkey: <code className="text-[#00f2fe] bg-white/5 px-1.5 py-0.5 rounded font-mono">admin2026</code>
-            </p>
-          </div>
         </div>
       </div>
     );
