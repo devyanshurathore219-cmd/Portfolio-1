@@ -182,7 +182,7 @@ export const EditorialHero: React.FC = () => {
               <Instagram size={17} />
             </a>
             <a
-              href="https://youtube.com/@digiwebnow"
+              href="https://www.youtube.com/@Digiwebnow"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
