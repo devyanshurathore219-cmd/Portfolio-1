@@ -178,17 +178,17 @@ const ProjectCard: React.FC<CardProps> = ({ project, index, totalCards }) => {
           its page top rather than a mid-page band. Same reasoning as the
           thumbnails in FeaturedClientWebsites.
         */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 mt-4 flex-grow overflow-hidden">
-          {/* Left Column (40% width -> col-span-5) */}
-          <div className="md:col-span-5 flex flex-col gap-4 h-full">
-            <div className="rounded-[30px] sm:rounded-[40px] overflow-hidden border border-[#D7E2EA]/20 h-[clamp(130px,16vw,230px)] flex-shrink-0">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 md:gap-6 mt-3 sm:mt-4 flex-grow overflow-hidden min-h-0">
+          {/* Left Column (hidden on smallest screens or stacked cleanly) */}
+          <div className="hidden sm:flex md:col-span-5 flex-col gap-3 sm:gap-4 h-full min-h-0">
+            <div className="rounded-[24px] sm:rounded-[30px] md:rounded-[40px] overflow-hidden border border-[#D7E2EA]/20 h-[clamp(110px,16vw,230px)] flex-shrink-0">
               <img
                 src={project.col1Image1}
                 alt={`${project.name} preview 1`}
                 className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="rounded-[30px] sm:rounded-[40px] overflow-hidden border border-[#D7E2EA]/20 h-[clamp(160px,22vw,340px)] flex-grow">
+            <div className="rounded-[24px] sm:rounded-[30px] md:rounded-[40px] overflow-hidden border border-[#D7E2EA]/20 flex-grow min-h-0">
               <img
                 src={project.col1Image2}
                 alt={`${project.name} preview 2`}
@@ -197,9 +197,9 @@ const ProjectCard: React.FC<CardProps> = ({ project, index, totalCards }) => {
             </div>
           </div>
 
-          {/* Right Column (60% width -> col-span-7) */}
-          <div className="md:col-span-7 h-full">
-            <div className="rounded-[30px] sm:rounded-[40px] overflow-hidden border border-[#D7E2EA]/20 h-full">
+          {/* Right Column (Full width on mobile -> col-span-12 on mobile, col-span-7 on desktop) */}
+          <div className="col-span-1 md:col-span-7 h-full min-h-0">
+            <div className="rounded-[24px] sm:rounded-[30px] md:rounded-[40px] overflow-hidden border border-[#D7E2EA]/20 h-full">
               <img
                 src={project.col2Image}
                 alt={`${project.name} preview main`}
