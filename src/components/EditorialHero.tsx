@@ -108,12 +108,12 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[90vh] sm:h-[80vh] md:h-[82vh] lg:h-[86vh] sm:max-h-[750px] md:max-h-[920px] w-auto sm:max-w-[75vw] md:max-w-none flex items-end justify-center will-change-transform"
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 w-[130vw] sm:w-auto sm:h-[80vh] md:h-[82vh] lg:h-[86vh] sm:max-h-[750px] md:max-h-[920px] h-auto sm:max-w-[75vw] md:max-w-none flex items-end justify-center will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
           alt="DigiWebNow Portrait"
-          className="anim-rise-in h-full w-auto object-contain object-bottom drop-shadow-2xl"
+          className="anim-rise-in w-full sm:w-auto sm:h-full h-auto object-contain object-bottom drop-shadow-2xl"
           style={{ animationDelay: '300ms' }}
         />
       </motion.div>
