@@ -131,7 +131,7 @@ export const EditorialHero: React.FC = () => {
         style={{ animationDelay: '1200ms' }}
       />
 
-      {/* ---------- 3D Interactive Avatar Portrait (z-20 - standing in front of the line) ---------- */}
+      {/* ---------- 3D Interactive Avatar Portrait (z-20 - responsive centering on mobile, offset on desktop) ---------- */}
       <motion.div
         style={{
           x: avatarX,
@@ -141,7 +141,7 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[var(--section-curve)] left-[35%] z-20 h-[80vh] sm:h-[84vh] max-h-[850px] w-auto flex items-end will-change-transform"
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[68vh] sm:h-[76vh] md:h-[80vh] lg:h-[84vh] max-h-[850px] w-auto flex items-end will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
@@ -152,7 +152,7 @@ export const EditorialHero: React.FC = () => {
       </motion.div>
 
       {/* ---------- Header with Centered Segmented Bar (z-30) ---------- */}
-      <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-6 pt-6 sm:px-10 sm:pt-8">
+      <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-4 pt-4 sm:px-8 sm:pt-6 md:px-10 md:pt-8">
         {/* Left: Official Company Logo */}
         <a
           href="#top"
@@ -162,14 +162,14 @@ export const EditorialHero: React.FC = () => {
           <img
             src="/assets/images/digiwebnow_logo.png"
             alt="Digiwebnow - Digital Products. Intelligent Solutions."
-            className="h-8 sm:h-9 md:h-10 lg:h-11 w-auto object-contain"
+            className="h-7 sm:h-8 md:h-10 lg:h-11 w-auto object-contain"
           />
         </a>
 
         {/* Center space kept clear for the Floating Capsule Navbar */}
 
         {/* Right: Social Media Icons & Mobile Hamburger Button */}
-        <div className="flex items-center gap-2.5 z-10 min-w-[100px] justify-end">
+        <div className="flex items-center gap-2.5 z-10 min-w-[80px] sm:min-w-[100px] justify-end">
           {/* Top-Right Social Icons (Instagram & YouTube only) */}
           <div className="anim-fade-up hidden sm:flex items-center gap-2.5" style={{ animationDelay: '900ms' }}>
             <a
@@ -228,14 +228,14 @@ export const EditorialHero: React.FC = () => {
       </header>
 
       {/* ---------- Footer: desktop z-10 (under portrait), mobile z-30 ---------- */}
-      <footer className="absolute inset-x-0 bottom-[var(--section-curve)] z-30 flex items-end justify-between px-6 pb-4 font-hn text-[11px] sm:text-xs leading-snug sm:z-10 sm:px-10 sm:pb-6">
+      <footer className="absolute inset-x-0 bottom-[var(--section-curve)] z-30 flex flex-col sm:flex-row items-start sm:items-end justify-between px-4 pb-3 sm:px-8 sm:pb-5 md:px-10 md:pb-6 font-hn text-[10px] sm:text-xs leading-snug sm:z-10 gap-2 sm:gap-0">
         <div className="anim-fade-up space-y-0.5 max-w-sm" style={{ animationDelay: '1400ms' }}>
           {FOOTER_LEFT.map((line) => (
             <p key={line} className="tracking-wide text-cream/90">{line}</p>
           ))}
         </div>
 
-        <div className="anim-fade-up text-right space-y-0.5" style={{ animationDelay: '1550ms' }}>
+        <div className="anim-fade-up text-left sm:text-right space-y-0.5" style={{ animationDelay: '1550ms' }}>
           {FOOTER_RIGHT.map((line) => (
             <p key={line} className="tracking-wide text-cream/80">{line}</p>
           ))}
