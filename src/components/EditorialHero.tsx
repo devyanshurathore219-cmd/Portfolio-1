@@ -76,11 +76,11 @@ export const EditorialHero: React.FC = () => {
       {/* ---------- Marquee services title (z-10) with depth parallax ---------- */}
       <motion.div
         style={{ x: marqueeParallaxX }}
-        className="anim-fade-up absolute inset-x-0 top-[18vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
+        className="anim-fade-up absolute inset-x-0 top-[20vh] sm:top-[22vh] md:top-[24vh] z-10 overflow-hidden"
         aria-hidden="true"
       >
         <div
-          className="marquee flex w-max whitespace-nowrap font-kanit font-black uppercase tracking-tight text-[11vh] sm:text-[14vh] md:text-[18vh] lg:text-[20vh] leading-none text-cream/90"
+          className="marquee flex w-max whitespace-nowrap font-kanit font-black uppercase tracking-tight text-[9.5vh] sm:text-[13vh] md:text-[18vh] lg:text-[20vh] leading-none text-cream/90"
           style={{ animationDuration: '90s' }}
         >
           {marqueeSpan}
@@ -104,7 +104,7 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[70vh] sm:h-[78vh] md:h-[82vh] lg:h-[86vh] max-h-[920px] w-[95vw] sm:w-[85vw] md:w-auto flex items-end justify-center will-change-transform"
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[54vh] sm:h-[68vh] md:h-[82vh] lg:h-[86vh] max-h-[520px] sm:max-h-[700px] md:max-h-[920px] w-auto max-w-[85vw] sm:max-w-[70vw] md:max-w-none flex items-end justify-center will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
