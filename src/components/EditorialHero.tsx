@@ -16,7 +16,6 @@ const FOOTER_LEFT = [
   'Custom Web & E-Commerce Engineering',
   'Full-Stack Web Apps • Cloud Architecture',
   'Modern UI/UX Design & High-Converting Websites',
-  'API Integrations & Performance Optimization',
 ];
 const FOOTER_RIGHT = ['Featured live work', 'iYOU Global & Gaur Furniture'];
 
@@ -77,11 +76,11 @@ export const EditorialHero: React.FC = () => {
       {/* ---------- Marquee services title (z-10) with depth parallax ---------- */}
       <motion.div
         style={{ x: marqueeParallaxX }}
-        className="anim-fade-up absolute inset-x-0 top-[15vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
+        className="anim-fade-up absolute inset-x-0 top-[22vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
         aria-hidden="true"
       >
         <div
-          className="marquee flex w-max whitespace-nowrap font-kanit font-black uppercase tracking-tight text-[10vh] sm:text-[14vh] md:text-[18vh] lg:text-[20vh] leading-none text-cream/90"
+          className="marquee flex w-max whitespace-nowrap font-kanit font-black uppercase tracking-tight text-[11vh] sm:text-[14vh] md:text-[18vh] lg:text-[20vh] leading-none text-cream/90"
           style={{ animationDuration: '90s' }}
         >
           {marqueeSpan}
@@ -89,13 +88,13 @@ export const EditorialHero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* ---------- Horizontal cream rule (z-10 - sitting behind the 3D avatar image) ---------- */}
+      {/* ---------- Horizontal cream rule (z-10 - sitting behind the 3D avatar image on tablet/desktop) ---------- */}
       <div
-        className="anim-line absolute inset-x-4 sm:inset-x-10 bottom-[calc(7rem_+_var(--section-curve))] z-10 h-0.5 bg-cream"
+        className="anim-line hidden sm:block absolute inset-x-4 sm:inset-x-10 bottom-[calc(7rem_+_var(--section-curve))] z-10 h-0.5 bg-cream"
         style={{ animationDelay: '1200ms' }}
       />
 
-      {/* ---------- 3D Interactive Avatar Portrait (z-20 - responsive centering on mobile, offset on desktop) ---------- */}
+      {/* ---------- 3D Interactive Avatar Portrait (z-20 - responsive scale & centering on mobile, offset on desktop) ---------- */}
       <motion.div
         style={{
           x: avatarX,
@@ -105,12 +104,12 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[70vh] sm:h-[78vh] md:h-[80vh] lg:h-[84vh] max-h-[850px] w-auto flex items-end will-change-transform"
+        className="pointer-events-none absolute bottom-[calc(var(--section-curve)-10px)] sm:bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[76vh] sm:h-[80vh] md:h-[82vh] lg:h-[86vh] max-h-[900px] w-auto flex items-end will-change-transform scale-[1.18] sm:scale-100 origin-bottom"
       >
         <img
           src={FRONT_PORTRAIT}
           alt="DigiWebNow Portrait"
-          className="anim-rise-in h-full w-auto object-contain object-bottom"
+          className="anim-rise-in h-full w-auto object-contain object-bottom drop-shadow-2xl"
           style={{ animationDelay: '300ms' }}
         />
       </motion.div>
@@ -157,17 +156,18 @@ export const EditorialHero: React.FC = () => {
       </header>
 
       {/* ---------- Footer: desktop z-10 (under portrait), mobile z-30 with bottom spacing ---------- */}
-      <footer className="absolute inset-x-0 bottom-24 sm:bottom-[var(--section-curve)] z-30 flex flex-col sm:flex-row items-start sm:items-end justify-between px-5 sm:px-8 md:px-10 pb-1 sm:pb-5 md:pb-6 font-hn text-[10.5px] sm:text-xs leading-snug sm:z-10 gap-2 sm:gap-0 pointer-events-none">
-        <div className="anim-fade-up space-y-0.5 max-w-xs sm:max-w-sm pointer-events-auto bg-black/40 sm:bg-transparent backdrop-blur-xs sm:backdrop-blur-none p-1.5 sm:p-0 rounded-xl" style={{ animationDelay: '1400ms' }}>
-          {FOOTER_LEFT.map((line) => (
-            <p key={line} className="tracking-wide text-cream/90 font-medium sm:font-normal">{line}</p>
+      <footer className="absolute inset-x-0 bottom-24 sm:bottom-[var(--section-curve)] z-30 flex flex-col sm:flex-row items-start sm:items-end justify-between px-5 sm:px-8 md:px-10 pb-2 sm:pb-5 md:pb-6 font-hn text-[11px] sm:text-xs leading-snug sm:z-10 gap-2 sm:gap-0 pointer-events-none">
+        <div className="anim-fade-up space-y-0.5 max-w-xs sm:max-w-sm pointer-events-auto [text-shadow:_0_2px_10px_rgba(0,0,0,0.8)]" style={{ animationDelay: '1400ms' }}>
+          {FOOTER_LEFT.map((line, idx) => (
+            <p key={line} className={`tracking-wide ${idx === 0 ? 'text-white font-semibold text-xs sm:text-sm' : 'text-cream/85 font-medium text-[10.5px] sm:text-xs'}`}>
+              {line}
+            </p>
           ))}
         </div>
 
-        <div className="anim-fade-up text-left sm:text-right space-y-0.5 pointer-events-auto bg-black/40 sm:bg-transparent backdrop-blur-xs sm:backdrop-blur-none p-1.5 sm:p-0 rounded-xl" style={{ animationDelay: '1550ms' }}>
-          {FOOTER_RIGHT.map((line) => (
-            <p key={line} className="tracking-wide text-cream/80">{line}</p>
-          ))}
+        <div className="anim-fade-up text-left sm:text-right space-y-0.5 pointer-events-auto [text-shadow:_0_2px_10px_rgba(0,0,0,0.8)]" style={{ animationDelay: '1550ms' }}>
+          <p className="text-[10px] sm:text-xs uppercase tracking-wider text-[#00f2fe] font-mono font-medium">{FOOTER_RIGHT[0]}</p>
+          <p className="tracking-wide text-white font-semibold text-xs sm:text-sm">{FOOTER_RIGHT[1]}</p>
         </div>
       </footer>
     </section>
