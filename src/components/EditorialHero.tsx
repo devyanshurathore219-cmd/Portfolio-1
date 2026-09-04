@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, Instagram, Youtube, Github, Linkedin } from 'lucide-react';
+import { X, Instagram, Youtube } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 /* ------------------------------------------------------------------ *
@@ -137,7 +137,7 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="avatar-crop-at-line pointer-events-none absolute bottom-[var(--section-curve)] left-[35%] z-20 h-[92vh] sm:h-[96vh] max-h-[1050px] w-auto flex items-end will-change-transform"
+        className="avatar-crop-at-line pointer-events-none absolute bottom-[var(--section-curve)] left-[35%] z-20 h-[80vh] sm:h-[84vh] max-h-[850px] w-auto flex items-end will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
@@ -169,8 +169,8 @@ export const EditorialHero: React.FC = () => {
 
         {/* Right: Social Media Icons & Mobile Hamburger Button */}
         <div className="flex items-center gap-2.5 z-10 min-w-[100px] justify-end">
-          {/* Top-Right Social Icons (at navbar level) */}
-          <div className="anim-fade-up hidden sm:flex items-center gap-2" style={{ animationDelay: '900ms' }}>
+          {/* Top-Right Social Icons (Instagram & YouTube only) */}
+          <div className="anim-fade-up hidden sm:flex items-center gap-2.5" style={{ animationDelay: '900ms' }}>
             <a
               href="https://instagram.com/officialdigiwebnow"
               target="_blank"
@@ -188,24 +188,6 @@ export const EditorialHero: React.FC = () => {
               className="h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md flex items-center justify-center text-white/90 hover:text-[#00f2fe] hover:scale-110 transition-all duration-300 shadow-sm"
             >
               <Youtube size={17} />
-            </a>
-            <a
-              href="https://github.com/devyanshurathore219-cmd"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md flex items-center justify-center text-white/90 hover:text-[#00f2fe] hover:scale-110 transition-all duration-300 shadow-sm"
-            >
-              <Github size={17} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md flex items-center justify-center text-white/90 hover:text-[#00f2fe] hover:scale-110 transition-all duration-300 shadow-sm"
-            >
-              <Linkedin size={17} />
             </a>
           </div>
 
