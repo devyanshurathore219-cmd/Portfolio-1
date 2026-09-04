@@ -115,7 +115,7 @@ export const EditorialHero: React.FC = () => {
       {/* ---------- Marquee services title (z-10) with depth parallax ---------- */}
       <motion.div
         style={{ x: marqueeParallaxX }}
-        className="anim-fade-up absolute inset-x-0 top-[18vh] z-10 overflow-hidden sm:top-[16vh]"
+        className="anim-fade-up absolute inset-x-0 top-[26vh] z-10 overflow-hidden sm:top-[23vh]"
         aria-hidden="true"
       >
         <div
@@ -127,7 +127,13 @@ export const EditorialHero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* ---------- 3D Interactive Avatar Portrait (z-20) ---------- */}
+      {/* ---------- Horizontal cream rule (z-10 - sitting behind the 3D avatar image) ---------- */}
+      <div
+        className="anim-line absolute inset-x-6 bottom-[calc(5.5rem_+_var(--section-curve))] z-10 h-0.5 bg-cream sm:inset-x-10 sm:bottom-[calc(7rem_+_var(--section-curve))]"
+        style={{ animationDelay: '1200ms' }}
+      />
+
+      {/* ---------- 3D Interactive Avatar Portrait (z-20 - standing in front of the line) ---------- */}
       <motion.div
         style={{
           x: avatarX,
@@ -146,12 +152,6 @@ export const EditorialHero: React.FC = () => {
           style={{ animationDelay: '300ms' }}
         />
       </motion.div>
-
-      {/* ---------- Horizontal cream rule (z-30) ---------- */}
-      <div
-        className="anim-line absolute inset-x-6 bottom-[calc(5.5rem_+_var(--section-curve))] z-30 h-0.5 bg-cream sm:inset-x-10 sm:bottom-[calc(7rem_+_var(--section-curve))]"
-        style={{ animationDelay: '1200ms' }}
-      />
 
       {/* ---------- Header with Centered Segmented Bar (z-30) ---------- */}
       <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-6 pt-6 sm:px-10 sm:pt-8">
