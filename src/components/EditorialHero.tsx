@@ -76,7 +76,7 @@ export const EditorialHero: React.FC = () => {
       {/* ---------- Marquee services title (z-10) with depth parallax ---------- */}
       <motion.div
         style={{ x: marqueeParallaxX }}
-        className="anim-fade-up absolute inset-x-0 top-[22vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
+        className="anim-fade-up absolute inset-x-0 top-[18vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
         aria-hidden="true"
       >
         <div
@@ -94,7 +94,7 @@ export const EditorialHero: React.FC = () => {
         style={{ animationDelay: '1200ms' }}
       />
 
-      {/* ---------- 3D Interactive Avatar Portrait (z-20 - responsive scale & centering on mobile, offset on desktop) ---------- */}
+      {/* ---------- 3D Interactive Avatar Portrait (z-20 - responsive centering on mobile, offset on desktop) ---------- */}
       <motion.div
         style={{
           x: avatarX,
@@ -104,12 +104,12 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[calc(var(--section-curve)-10px)] sm:bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[76vh] sm:h-[80vh] md:h-[82vh] lg:h-[86vh] max-h-[900px] w-auto flex items-end will-change-transform scale-[1.18] sm:scale-100 origin-bottom"
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[70vh] sm:h-[78vh] md:h-[82vh] lg:h-[86vh] max-h-[920px] w-[95vw] sm:w-[85vw] md:w-auto flex items-end justify-center will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
           alt="DigiWebNow Portrait"
-          className="anim-rise-in h-full w-auto object-contain object-bottom drop-shadow-2xl"
+          className="anim-rise-in h-full w-auto max-w-full object-contain object-bottom drop-shadow-2xl"
           style={{ animationDelay: '300ms' }}
         />
       </motion.div>
