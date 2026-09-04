@@ -87,24 +87,24 @@ export const AboutSection: React.FC = () => {
         </div>
 
         {/* Credentials & Quality Criteria Grid */}
-        <FadeIn delay={0.2} y={30} className="w-full mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+        <FadeIn delay={0.2} y={30} className="w-full mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-4 text-left">
           <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00f2fe]/40 transition-all">
-            <Rocket className="w-6 h-6 text-[#00f2fe] mb-2" />
+            <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-[#00f2fe] mb-2" />
             <div className="text-white font-bold text-sm">Custom Engineering</div>
             <div className="text-xs text-[#D7E2EA]/60">High-Performance Code</div>
           </div>
           <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00f2fe]/40 transition-all">
-            <Cpu className="w-6 h-6 text-[#00f2fe] mb-2" />
+            <Cpu className="w-5 h-5 sm:w-6 sm:h-6 text-[#00f2fe] mb-2" />
             <div className="text-white font-bold text-sm">Full-Stack Cloud</div>
             <div className="text-xs text-[#D7E2EA]/60">Scalable Architecture</div>
           </div>
           <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00f2fe]/40 transition-all">
-            <Code2 className="w-6 h-6 text-[#00f2fe] mb-2" />
+            <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#00f2fe] mb-2" />
             <div className="text-white font-bold text-sm">UI/UX Design</div>
             <div className="text-xs text-[#D7E2EA]/60">Figma & Design Systems</div>
           </div>
           <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00f2fe]/40 transition-all">
-            <ShieldCheck className="w-6 h-6 text-[#00f2fe] mb-2" />
+            <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#00f2fe] mb-2" />
             <div className="text-white font-bold text-sm">Enterprise Quality</div>
             <div className="text-xs text-[#D7E2EA]/60">Secure, Fast & SEO Ready</div>
           </div>
