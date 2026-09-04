@@ -204,9 +204,9 @@ export const FloatingNavbar: React.FC<FloatingNavbarProps> = ({
   return (
     <nav
       aria-label="Main floating menu"
-      className={`fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center pointer-events-auto ${className}`}
+      className={`fixed top-3 sm:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center pointer-events-auto max-w-[94vw] ${className}`}
     >
-      <div className="flex items-center bg-white/95 backdrop-blur-2xl border border-white/60 p-1.5 sm:p-2 rounded-full shadow-[0_16px_45px_rgba(0,0,0,0.4),0_2px_8px_rgba(255,255,255,0.2)] transition-all">
+      <div className="flex items-center bg-white/95 backdrop-blur-2xl border border-white/60 p-1 sm:p-2 rounded-full shadow-[0_16px_45px_rgba(0,0,0,0.4),0_2px_8px_rgba(255,255,255,0.2)] transition-all">
         {NAV_TABS.map((tab) => {
           const isActive = activeTab === tab.id;
           const Icon = tab.icon;
@@ -218,17 +218,17 @@ export const FloatingNavbar: React.FC<FloatingNavbarProps> = ({
               onClick={(e) => handleTabClick(tab, e)}
               className={`relative flex items-center justify-center rounded-full transition-all duration-300 focus:outline-none select-none ${
                 isActive
-                  ? 'bg-black text-white px-4 sm:px-5 py-2 sm:py-2.5 shadow-[0_4px_12px_rgba(0,0,0,0.3)]'
-                  : 'text-neutral-600 hover:text-black hover:bg-neutral-100/80 p-2.5 sm:p-3'
+                  ? 'bg-black text-white px-3 sm:px-5 py-1.5 sm:py-2.5 shadow-[0_4px_12px_rgba(0,0,0,0.3)]'
+                  : 'text-neutral-600 hover:text-black hover:bg-neutral-100/80 p-2 sm:p-3'
               }`}
               title={tab.label}
               aria-label={tab.label}
               aria-current={isActive ? 'page' : undefined}
             >
-              <div className="flex items-center gap-2 sm:gap-2.5">
+              <div className="flex items-center gap-1.5 sm:gap-2.5">
                 <Icon
                   active={isActive}
-                  className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 ${
+                  className={`w-3.5 h-3.5 sm:w-5 sm:h-5 transition-transform duration-200 ${
                     isActive ? 'text-white scale-105' : 'text-neutral-700'
                   }`}
                 />
