@@ -162,7 +162,7 @@ export const EditorialHero: React.FC = () => {
           <img
             src="/assets/images/digiwebnow_logo.png"
             alt="Digiwebnow - Digital Products. Intelligent Solutions."
-            className="h-8 sm:h-9 md:h-10 lg:h-11 w-auto object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
+            className="h-8 sm:h-9 md:h-10 lg:h-11 w-auto object-contain"
           />
         </a>
 
