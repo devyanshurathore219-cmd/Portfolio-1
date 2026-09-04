@@ -73,17 +73,10 @@ export const EditorialHero: React.FC = () => {
         className="anim-fade-in absolute inset-0 h-full w-full object-cover"
       />
 
-      {/* ---------- Mobile Intro Sub-Tag (z-10) ---------- */}
-      <div className="anim-fade-up block sm:hidden absolute inset-x-0 top-[14vh] z-10 text-center px-4" style={{ animationDelay: '600ms' }}>
-        <span className="inline-block text-[10px] font-mono uppercase tracking-[0.25em] text-[#00f2fe] bg-black/40 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/10 shadow-sm">
-          Lead Web Architect &bull; DigiWebNow
-        </span>
-      </div>
-
       {/* ---------- Marquee services title (z-10) with depth parallax ---------- */}
       <motion.div
         style={{ x: marqueeParallaxX }}
-        className="anim-fade-up absolute inset-x-0 top-[26vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
+        className="anim-fade-up absolute inset-x-0 top-[22vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
         aria-hidden="true"
       >
         <div
@@ -95,13 +88,17 @@ export const EditorialHero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* ---------- Horizontal cream rule (z-10 - sitting behind the 3D avatar image on tablet/desktop) ---------- */}
+      {/* ---------- Horizontal cream rule (tablet/desktop only) ---------- */}
       <div
         className="anim-line hidden sm:block absolute inset-x-4 sm:inset-x-10 bottom-[calc(7rem_+_var(--section-curve))] z-10 h-0.5 bg-cream"
         style={{ animationDelay: '1200ms' }}
       />
 
-      {/* ---------- 3D Interactive Avatar Portrait (z-20 - responsive centering on mobile, offset on desktop) ---------- */}
+      {/* ---------- 3D Interactive Avatar Portrait ----------
+           Mobile: height-driven at 78vh, NO max-width cap.
+           The section's overflow-hidden clips any horizontal excess cleanly.
+           This makes the character fill the screen like a proper hero.
+           Desktop: offset left at 35%, height-driven at 82-86vh. ---------- */}
       <motion.div
         style={{
           x: avatarX,
@@ -111,12 +108,12 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[66vh] sm:h-[75vh] md:h-[82vh] lg:h-[86vh] max-h-[640px] sm:max-h-[750px] md:max-h-[920px] w-auto max-w-[90vw] sm:max-w-[75vw] md:max-w-none flex items-end justify-center will-change-transform"
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[78vh] sm:h-[80vh] md:h-[82vh] lg:h-[86vh] sm:max-h-[750px] md:max-h-[920px] w-auto sm:max-w-[75vw] md:max-w-none flex items-end justify-center will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
           alt="DigiWebNow Portrait"
-          className="anim-rise-in h-full w-auto max-w-full object-contain object-bottom drop-shadow-2xl"
+          className="anim-rise-in h-full w-auto object-contain object-bottom drop-shadow-2xl"
           style={{ animationDelay: '300ms' }}
         />
       </motion.div>
