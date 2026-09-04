@@ -77,11 +77,11 @@ export const EditorialHero: React.FC = () => {
       {/* ---------- Marquee services title (z-10) with depth parallax ---------- */}
       <motion.div
         style={{ x: marqueeParallaxX }}
-        className="anim-fade-up absolute inset-x-0 top-[18vh] sm:top-[22vh] md:top-[24vh] z-10 overflow-hidden"
+        className="anim-fade-up absolute inset-x-0 top-[15vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
         aria-hidden="true"
       >
         <div
-          className="marquee flex w-max whitespace-nowrap font-kanit font-black uppercase tracking-tight text-[9vh] sm:text-[14vh] md:text-[18vh] lg:text-[20vh] leading-none text-cream/90"
+          className="marquee flex w-max whitespace-nowrap font-kanit font-black uppercase tracking-tight text-[10vh] sm:text-[14vh] md:text-[18vh] lg:text-[20vh] leading-none text-cream/90"
           style={{ animationDuration: '90s' }}
         >
           {marqueeSpan}
@@ -105,7 +105,7 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[56vh] sm:h-[72vh] md:h-[80vh] lg:h-[84vh] max-h-[850px] w-auto flex items-end will-change-transform"
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[70vh] sm:h-[78vh] md:h-[80vh] lg:h-[84vh] max-h-[850px] w-auto flex items-end will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
@@ -157,14 +157,14 @@ export const EditorialHero: React.FC = () => {
       </header>
 
       {/* ---------- Footer: desktop z-10 (under portrait), mobile z-30 with bottom spacing ---------- */}
-      <footer className="absolute inset-x-0 bottom-20 sm:bottom-[var(--section-curve)] z-30 flex flex-col sm:flex-row items-start sm:items-end justify-between px-4 pb-1 sm:px-8 sm:pb-5 md:px-10 md:pb-6 font-hn text-[10px] sm:text-xs leading-snug sm:z-10 gap-1.5 sm:gap-0">
-        <div className="anim-fade-up space-y-0.5 max-w-xs sm:max-w-sm" style={{ animationDelay: '1400ms' }}>
+      <footer className="absolute inset-x-0 bottom-24 sm:bottom-[var(--section-curve)] z-30 flex flex-col sm:flex-row items-start sm:items-end justify-between px-5 sm:px-8 md:px-10 pb-1 sm:pb-5 md:pb-6 font-hn text-[10.5px] sm:text-xs leading-snug sm:z-10 gap-2 sm:gap-0 pointer-events-none">
+        <div className="anim-fade-up space-y-0.5 max-w-xs sm:max-w-sm pointer-events-auto bg-black/40 sm:bg-transparent backdrop-blur-xs sm:backdrop-blur-none p-1.5 sm:p-0 rounded-xl" style={{ animationDelay: '1400ms' }}>
           {FOOTER_LEFT.map((line) => (
-            <p key={line} className="tracking-wide text-cream/90">{line}</p>
+            <p key={line} className="tracking-wide text-cream/90 font-medium sm:font-normal">{line}</p>
           ))}
         </div>
 
-        <div className="anim-fade-up text-left sm:text-right space-y-0.5" style={{ animationDelay: '1550ms' }}>
+        <div className="anim-fade-up text-left sm:text-right space-y-0.5 pointer-events-auto bg-black/40 sm:bg-transparent backdrop-blur-xs sm:backdrop-blur-none p-1.5 sm:p-0 rounded-xl" style={{ animationDelay: '1550ms' }}>
           {FOOTER_RIGHT.map((line) => (
             <p key={line} className="tracking-wide text-cream/80">{line}</p>
           ))}
