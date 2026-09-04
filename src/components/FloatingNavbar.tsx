@@ -204,9 +204,9 @@ export const FloatingNavbar: React.FC<FloatingNavbarProps> = ({
   return (
     <nav
       aria-label="Main floating menu"
-      className={`fixed top-3 sm:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center pointer-events-auto max-w-[94vw] ${className}`}
+      className={`fixed bottom-4 sm:bottom-auto sm:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center pointer-events-auto max-w-[94vw] ${className}`}
     >
-      <div className="flex items-center bg-white/95 backdrop-blur-2xl border border-white/60 p-1 sm:p-2 rounded-full shadow-[0_16px_45px_rgba(0,0,0,0.4),0_2px_8px_rgba(255,255,255,0.2)] transition-all">
+      <div className="flex items-center bg-white/95 backdrop-blur-2xl border border-white/60 p-1 sm:p-2 rounded-full shadow-[0_16px_45px_rgba(0,0,0,0.5),0_2px_8px_rgba(255,255,255,0.2)] transition-all">
         {NAV_TABS.map((tab) => {
           const isActive = activeTab === tab.id;
           const Icon = tab.icon;
