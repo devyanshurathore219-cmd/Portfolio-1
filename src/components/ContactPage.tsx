@@ -340,7 +340,7 @@ export const ContactPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                         <input
                           id="cf-phone"
                           type="tel"
-                          placeholder="+91 98108 37875"
+                          placeholder="+91 1234567890"
                           autoComplete="tel"
                           className={FIELD}
                           value={form.phone}

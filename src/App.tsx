@@ -101,11 +101,11 @@ export const App: React.FC = () => {
           </a>
 
           <a
-            href="tel:817-869-9658"
+            href="tel:9810837875"
             className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00f2fe] text-xs sm:text-sm font-semibold text-white transition-all"
           >
             <Phone className="w-4 h-4 text-[#00f2fe]" />
-            <span>817-869-9658 / 9870324454</span>
+            <span>98108 37875 / 98703 24454</span>
           </a>
 
           <a
