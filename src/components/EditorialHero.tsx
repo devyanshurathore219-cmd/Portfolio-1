@@ -137,7 +137,7 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="avatar-crop-at-line pointer-events-none absolute bottom-[var(--section-curve)] left-[35%] z-20 h-[80vh] sm:h-[84vh] max-h-[850px] w-auto flex items-end will-change-transform"
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-[35%] z-20 h-[80vh] sm:h-[84vh] max-h-[850px] w-auto flex items-end will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
