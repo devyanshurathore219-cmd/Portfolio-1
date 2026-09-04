@@ -73,14 +73,21 @@ export const EditorialHero: React.FC = () => {
         className="anim-fade-in absolute inset-0 h-full w-full object-cover"
       />
 
+      {/* ---------- Mobile Intro Sub-Tag (z-10) ---------- */}
+      <div className="anim-fade-up block sm:hidden absolute inset-x-0 top-[14vh] z-10 text-center px-4" style={{ animationDelay: '600ms' }}>
+        <span className="inline-block text-[10px] font-mono uppercase tracking-[0.25em] text-[#00f2fe] bg-black/40 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/10 shadow-sm">
+          Lead Web Architect &bull; DigiWebNow
+        </span>
+      </div>
+
       {/* ---------- Marquee services title (z-10) with depth parallax ---------- */}
       <motion.div
         style={{ x: marqueeParallaxX }}
-        className="anim-fade-up absolute inset-x-0 top-[22vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
+        className="anim-fade-up absolute inset-x-0 top-[26vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
         aria-hidden="true"
       >
         <div
-          className="marquee flex w-max whitespace-nowrap font-kanit font-black uppercase tracking-tight text-[10vh] sm:text-[13vh] md:text-[18vh] lg:text-[20vh] leading-none text-cream/90"
+          className="marquee flex w-max whitespace-nowrap font-kanit font-black uppercase tracking-tight text-[11vh] sm:text-[13vh] md:text-[18vh] lg:text-[20vh] leading-none text-cream/90"
           style={{ animationDuration: '90s' }}
         >
           {marqueeSpan}
@@ -104,7 +111,7 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[65vh] sm:h-[75vh] md:h-[82vh] lg:h-[86vh] max-h-[600px] sm:max-h-[750px] md:max-h-[920px] w-auto max-w-[88vw] sm:max-w-[75vw] md:max-w-none flex items-end justify-center will-change-transform"
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[66vh] sm:h-[75vh] md:h-[82vh] lg:h-[86vh] max-h-[640px] sm:max-h-[750px] md:max-h-[920px] w-auto max-w-[90vw] sm:max-w-[75vw] md:max-w-none flex items-end justify-center will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
