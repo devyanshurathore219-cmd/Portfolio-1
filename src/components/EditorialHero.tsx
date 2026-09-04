@@ -128,7 +128,7 @@ export const EditorialHero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* ---------- 3D Interactive Avatar Portrait (z-20 - cropped at line without moving up) ---------- */}
+      {/* ---------- 3D Interactive Avatar Portrait (z-20 - centered in middle, clean without side shadows) ---------- */}
       <motion.div
         style={{
           x: avatarX,
@@ -138,12 +138,12 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="avatar-crop-at-line pointer-events-none absolute bottom-[var(--section-curve)] left-[35%] z-20 h-[92vh] sm:h-[96vh] max-h-[1050px] w-auto flex items-end will-change-transform"
+        className="avatar-crop-at-line pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 z-20 h-[92vh] sm:h-[96vh] max-h-[1050px] w-auto flex items-end will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
           alt="DigiWebNow Portrait"
-          className="anim-rise-in h-full w-auto object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+          className="anim-rise-in h-full w-auto object-contain object-bottom"
           style={{ animationDelay: '300ms' }}
         />
       </motion.div>
