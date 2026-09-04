@@ -10,8 +10,6 @@ const BG_IMAGE =
 
 const FRONT_PORTRAIT = '/assets/images/devyanshu_hero_hd.png';
 
-const BRAND = 'DigiWebNow';
-
 const HERO_MARQUEE = 'CUSTOM WEB DEVELOPMENT \u2022 FULL-STACK ARCHITECTURE \u2022 UI/UX DESIGN \u2022 HIGH PERFORMANCE WEBSITES';
 
 const SOCIAL_LINKS = [
@@ -155,14 +153,17 @@ export const EditorialHero: React.FC = () => {
 
       {/* ---------- Header with Centered Segmented Bar (z-30) ---------- */}
       <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-6 pt-6 sm:px-10 sm:pt-8">
-        {/* Left: Brand Name (Bold and Distinctive Logo) */}
+        {/* Left: Official Company Logo */}
         <a
           href="#top"
-          className="anim-fade-up font-kanit font-black text-xl sm:text-2xl tracking-wider uppercase text-white hover:text-[#00f2fe] transition-all duration-300 z-10 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)] flex items-center gap-1.5"
+          className="anim-fade-up z-10 flex items-center transition-transform duration-300 hover:scale-105"
           style={{ animationDelay: '800ms' }}
         >
-          <span>{BRAND}</span>
-          <span className="text-[#00f2fe] text-sm">&bull;</span>
+          <img
+            src="/assets/images/digiwebnow_logo.png"
+            alt="Digiwebnow - Digital Products. Intelligent Solutions."
+            className="h-8 sm:h-10 md:h-11 w-auto object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
+          />
         </a>
 
         {/* Center space kept clear for the Floating Capsule Navbar */}
