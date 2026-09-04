@@ -76,7 +76,7 @@ export const EditorialHero: React.FC = () => {
       {/* ---------- Marquee services title (z-10) with depth parallax ---------- */}
       <motion.div
         style={{ x: marqueeParallaxX }}
-        className="anim-fade-up absolute inset-x-0 top-[16vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
+        className="anim-fade-up absolute inset-x-0 top-[20vh] sm:top-[20vh] md:top-[24vh] z-10 overflow-hidden"
         aria-hidden="true"
       >
         <div
@@ -104,12 +104,12 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[calc(var(--section-curve)-10px)] sm:bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[68vh] sm:h-[76vh] md:h-[82vh] lg:h-[86vh] max-h-[640px] sm:max-h-[750px] md:max-h-[920px] w-auto max-w-[92vw] sm:max-w-[80vw] md:max-w-none flex items-end justify-center will-change-transform"
+        className="pointer-events-none absolute bottom-[18vh] sm:bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 h-[58vh] sm:h-[72vh] md:h-[82vh] lg:h-[86vh] max-h-[620px] sm:max-h-[750px] md:max-h-[920px] w-auto max-w-[88vw] sm:max-w-[75vw] md:max-w-none flex items-center justify-center will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
           alt="DigiWebNow Portrait"
-          className="anim-rise-in h-full w-auto max-w-full object-contain object-bottom drop-shadow-2xl"
+          className="anim-rise-in h-full w-auto max-w-full object-contain drop-shadow-2xl"
           style={{ animationDelay: '300ms' }}
         />
       </motion.div>
