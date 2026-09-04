@@ -128,7 +128,7 @@ export const EditorialHero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* ---------- 3D Interactive Avatar Portrait (z-20 - centered in middle, clean without side shadows) ---------- */}
+      {/* ---------- 3D Interactive Avatar Portrait (z-20) ---------- */}
       <motion.div
         style={{
           x: avatarX,
@@ -138,7 +138,7 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="avatar-crop-at-line pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 z-20 h-[92vh] sm:h-[96vh] max-h-[1050px] w-auto flex items-end will-change-transform"
+        className="avatar-crop-at-line pointer-events-none absolute bottom-[var(--section-curve)] left-[35%] z-20 h-[92vh] sm:h-[96vh] max-h-[1050px] w-auto flex items-end will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
