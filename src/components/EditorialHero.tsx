@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X } from 'lucide-react';
+import { X, Instagram, Youtube, Github, Linkedin } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 /* ------------------------------------------------------------------ *
@@ -11,7 +11,6 @@ const BG_IMAGE =
 const FRONT_PORTRAIT = '/assets/images/devyanshu_hero_hd.png';
 
 const BRAND = 'DigiWebNow';
-const YEAR = '';
 
 const HERO_MARQUEE = 'CUSTOM WEB DEVELOPMENT \u2022 FULL-STACK ARCHITECTURE \u2022 UI/UX DESIGN \u2022 HIGH PERFORMANCE WEBSITES';
 
@@ -168,11 +167,47 @@ export const EditorialHero: React.FC = () => {
 
         {/* Center space kept clear for the Floating Capsule Navbar */}
 
-        {/* Right: Year & Mobile Hamburger Button */}
-        <div className="flex items-center gap-4 z-10 min-w-[100px] justify-end">
-          <span className="anim-fade-up hidden sm:inline-block text-sm" style={{ animationDelay: '900ms' }}>
-            {YEAR}
-          </span>
+        {/* Right: Social Media Icons & Mobile Hamburger Button */}
+        <div className="flex items-center gap-2.5 z-10 min-w-[100px] justify-end">
+          {/* Top-Right Social Icons (at navbar level) */}
+          <div className="anim-fade-up hidden sm:flex items-center gap-2" style={{ animationDelay: '900ms' }}>
+            <a
+              href="https://instagram.com/officialdigiwebnow"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md flex items-center justify-center text-white/90 hover:text-[#00f2fe] hover:scale-110 transition-all duration-300 shadow-sm"
+            >
+              <Instagram size={17} />
+            </a>
+            <a
+              href="https://youtube.com/@digiwebnow"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md flex items-center justify-center text-white/90 hover:text-[#00f2fe] hover:scale-110 transition-all duration-300 shadow-sm"
+            >
+              <Youtube size={17} />
+            </a>
+            <a
+              href="https://github.com/devyanshurathore219-cmd"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md flex items-center justify-center text-white/90 hover:text-[#00f2fe] hover:scale-110 transition-all duration-300 shadow-sm"
+            >
+              <Github size={17} />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="h-9 w-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-md flex items-center justify-center text-white/90 hover:text-[#00f2fe] hover:scale-110 transition-all duration-300 shadow-sm"
+            >
+              <Linkedin size={17} />
+            </a>
+          </div>
 
           {/* Mobile hamburger, morphs into an X (z-50) */}
           <button
