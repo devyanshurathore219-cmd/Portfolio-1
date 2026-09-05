@@ -105,7 +105,7 @@ export const EditorialHero: React.FC = () => {
             scale: avatarScale,
             transformStyle: 'preserve-3d',
           }}
-          className="flex items-end justify-center h-[76vh] sm:h-[80vh] md:h-[84vh] lg:h-[88vh] max-h-[660px] sm:max-h-[780px] md:max-h-[940px] w-auto will-change-transform"
+          className="flex items-end justify-center h-[73vh] sm:h-[80vh] md:h-[84vh] lg:h-[88vh] max-h-[660px] sm:max-h-[780px] md:max-h-[940px] w-auto will-change-transform"
         >
           <img
             src={FRONT_PORTRAIT}
