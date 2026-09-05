@@ -95,24 +95,26 @@ export const EditorialHero: React.FC = () => {
       />
 
       {/* ---------- 3D Interactive Avatar Portrait (Centered in middle of Hero area) ---------- */}
-      <motion.div
-        style={{
-          x: avatarX,
-          y: avatarY,
-          rotateY: rotateY,
-          rotateX: rotateX,
-          scale: avatarScale,
-          transformStyle: 'preserve-3d',
-        }}
-        className="pointer-events-none absolute bottom-[var(--section-curve)] left-[48%] sm:left-[46%] -translate-x-1/2 z-20 flex items-end justify-center h-[76vh] sm:h-[80vh] md:h-[84vh] lg:h-[88vh] max-h-[660px] sm:max-h-[780px] md:max-h-[940px] w-auto max-w-[106vw] sm:max-w-[75vw] md:max-w-none will-change-transform"
-      >
-        <img
-          src={FRONT_PORTRAIT}
-          alt="DigiWebNow Portrait"
-          className="anim-rise-in h-full w-auto max-w-full object-contain object-bottom drop-shadow-2xl"
-          style={{ animationDelay: '300ms' }}
-        />
-      </motion.div>
+      <div className="pointer-events-none absolute bottom-[var(--section-curve)] inset-x-0 z-20 flex items-end justify-center overflow-hidden">
+        <motion.div
+          style={{
+            x: avatarX,
+            y: avatarY,
+            rotateY: rotateY,
+            rotateX: rotateX,
+            scale: avatarScale,
+            transformStyle: 'preserve-3d',
+          }}
+          className="flex items-end justify-center h-[76vh] sm:h-[80vh] md:h-[84vh] lg:h-[88vh] max-h-[660px] sm:max-h-[780px] md:max-h-[940px] w-auto will-change-transform"
+        >
+          <img
+            src={FRONT_PORTRAIT}
+            alt="DigiWebNow Portrait"
+            className="anim-rise-in h-full w-auto max-w-none object-contain object-bottom drop-shadow-2xl"
+            style={{ animationDelay: '300ms' }}
+          />
+        </motion.div>
+      </div>
 
       {/* ---------- Header with Clean Responsive Top Bar (z-30) ---------- */}
       <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-4 pt-4 sm:px-8 sm:pt-6 md:px-10 md:pt-8">
