@@ -94,11 +94,7 @@ export const EditorialHero: React.FC = () => {
         style={{ animationDelay: '1200ms' }}
       />
 
-      {/* ---------- 3D Interactive Avatar Portrait ----------
-           Mobile: height-driven at 78vh, NO max-width cap.
-           The section's overflow-hidden clips any horizontal excess cleanly.
-           This makes the character fill the screen like a proper hero.
-           Desktop: offset left at 35%, height-driven at 82-86vh. ---------- */}
+      {/* ---------- 3D Interactive Avatar Portrait (Centered in middle of Hero area) ---------- */}
       <motion.div
         style={{
           x: avatarX,
@@ -108,12 +104,12 @@ export const EditorialHero: React.FC = () => {
           scale: avatarScale,
           transformStyle: 'preserve-3d',
         }}
-        className="pointer-events-none absolute bottom-[var(--section-curve)] left-75% -translate-x-1/2 md:left-[35%] md:translate-x-0 z-20 w-[110vw] sm:w-auto sm:h-[80vh] md:h-[82vh] lg:h-[86vh] sm:max-h-[750px] md:max-h-[920px] h-auto sm:max-w-[75vw] md:max-w-none flex items-end justify-center overflow-hidden will-change-transform"
+        className="pointer-events-none absolute bottom-[var(--section-curve)] left-1/2 -translate-x-1/2 z-20 flex items-end justify-center h-[68vh] sm:h-[78vh] md:h-[82vh] lg:h-[86vh] max-h-[600px] sm:max-h-[750px] md:max-h-[920px] w-auto max-w-[90vw] sm:max-w-[75vw] md:max-w-none will-change-transform"
       >
         <img
           src={FRONT_PORTRAIT}
           alt="DigiWebNow Portrait"
-          className="anim-rise-in w-full sm:w-auto sm:h-full h-auto object-contain object-bottom drop-shadow-2xl"
+          className="anim-rise-in h-full w-auto max-w-full object-contain object-bottom drop-shadow-2xl"
           style={{ animationDelay: '300ms' }}
         />
       </motion.div>
